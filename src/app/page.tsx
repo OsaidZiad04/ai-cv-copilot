@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { CvDocument } from "@/components/CvDocument";
 import { ProfileEditor } from "@/components/ProfileEditor";
 import { DemoControls } from "@/components/DemoControls";
@@ -179,7 +180,7 @@ export default function Home() {
 
   const step = interviewSteps[stepIndex];
   return <div className="app-shell">
-    <header className="site-header no-print"><div className="brand"><span className="brand-mark">CV<span>.</span></span><span>AI CV Copilot</span></div><div className="header-actions">{phase !== "landing" && <ModeBadge mode={mode} />}{phase !== "landing" && <button className="header-link" onClick={reset}>End session</button>}</div></header>
+    <header className="site-header no-print"><div className="brand"><Image className="brand-logo" src="/brand/logo-light.png" alt="Future Skills Fund" width={1328} height={439} priority /><span>AI CV Copilot</span></div><div className="header-actions">{phase !== "landing" && <ModeBadge mode={mode} />}{phase !== "landing" && <button className="header-link" onClick={reset}>End session</button>}</div></header>
     {phase === "landing" && <main className="landing">
       <div className="landing-copy"><span className="eyebrow"><span className="eyebrow-line" /> YOUR CAREER, IN FOCUS</span><h1>Make your first<br /><em>impression count.</em></h1><p className="lead">Build a professional first CV through a short guided conversation. Show what you have done, even if you have not had a formal job yet.</p>
         <div className="landing-actions"><button className="button primary" onClick={() => start(true)}>Start My CV <span aria-hidden="true">↗</span></button><button className="button secondary" onClick={() => start(false)}>Build Without AI</button></div>
