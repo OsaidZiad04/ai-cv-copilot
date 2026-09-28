@@ -31,11 +31,19 @@ const { CvDocument } = require("../src/components/CvDocument.tsx");
 const { DemoControls } = require("../src/components/DemoControls.tsx");
 const { POST: interviewPost } = require("../src/app/api/interview/route.ts");
 const { POST: summaryPost } = require("../src/app/api/summary/route.ts");
+const { GET: healthGet } = require("../src/app/api/health/route.ts");
 const { renderToStaticMarkup } = require("react-dom/server");
 
 test("schema accepts a complete empty profile and rejects malformed data", () => {
   assert.equal(candidateProfileSchema.safeParse(emptyProfile()).success, true);
   assert.equal(candidateProfileSchema.safeParse({ personal: { fullName: 42 } }).success, false);
+});
+
+test("health response is minimal and does not reveal configuration", async () => {
+  const response = healthGet();
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("Cache-Control"), "no-store");
+  assert.deepEqual(await response.json(), { status: "ok" });
 });
 
 test("guided flow captures facts and never invents a metric", () => {
