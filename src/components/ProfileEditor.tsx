@@ -6,10 +6,10 @@ import { projectBullet, experienceBullet } from "@/lib/cv";
 type Props = { profile: CandidateProfile; onChange: (profile: CandidateProfile) => void };
 type StringKey<T> = { [K in keyof T]: T[K] extends string ? K : never }[keyof T];
 
-function TextField({ label, value, onChange, multiline = false }: { label: string; value: string; onChange: (value: string) => void; multiline?: boolean }) {
+function TextField({ label, value, onChange, multiline = false, maxLength }: { label: string; value: string; onChange: (value: string) => void; multiline?: boolean; maxLength?: number }) {
   return <label className="field"><span>{label}</span>{multiline
-    ? <textarea value={value} onChange={(e) => onChange(e.target.value)} maxLength={2000} rows={3} />
-    : <input value={value} onChange={(e) => onChange(e.target.value)} maxLength={500} />}</label>;
+    ? <textarea value={value} onChange={(e) => onChange(e.target.value)} maxLength={maxLength || 2000} rows={3} />
+    : <input value={value} onChange={(e) => onChange(e.target.value)} maxLength={maxLength || 240} />}</label>;
 }
 
 const personalLabels: Record<keyof CandidateProfile["personal"], string> = {
@@ -26,7 +26,7 @@ export function ProfileEditor({ profile, onChange }: Props) {
 
   return <div className="editor-stack">
     <div className="panel"><div className="section-heading"><div><span className="eyebrow">Identity</span><h2>Contact & direction</h2></div></div>
-      <div className="field-grid">{(Object.keys(personalLabels) as (keyof CandidateProfile["personal"])[]).map((key) => <TextField key={key} label={personalLabels[key]} value={profile.personal[key]} onChange={(value) => setGroup("personal", key, value)} />)}
+      <div className="field-grid">{(Object.keys(personalLabels) as (keyof CandidateProfile["personal"])[]).map((key) => <TextField key={key} label={personalLabels[key]} value={profile.personal[key]} maxLength={["linkedin", "portfolio"].includes(key) ? 500 : 240} onChange={(value) => setGroup("personal", key, value)} />)}
         <TextField label="Target role" value={profile.careerGoal.role} onChange={(value) => setGroup("careerGoal", "role", value)} />
         <TextField label="Field" value={profile.careerGoal.field} onChange={(value) => setGroup("careerGoal", "field", value)} />
         <TextField label="Opportunity type" value={profile.careerGoal.opportunity} onChange={(value) => setGroup("careerGoal", "opportunity", value)} />
@@ -42,7 +42,7 @@ export function ProfileEditor({ profile, onChange }: Props) {
 
     <div className="panel"><div className="section-heading"><div><span className="eyebrow">Evidence</span><h2>Projects</h2></div><button className="text-button" type="button" onClick={() => onChange({ ...profile, projects: [...profile.projects, { name: "", problem: "", built: "", technologies: "", contribution: "", outcome: "", link: "", bullets: [] }] })}>+ Add project</button></div>
       {profile.projects.map((item, index) => <div className="edit-item" key={index}><div className="item-heading"><strong>{item.name || `Project ${index + 1}`}</strong><button className="text-button danger" onClick={() => removeArray("projects", index)}>Remove</button></div><div className="field-grid">
-        {(["name", "problem", "built", "technologies", "contribution", "outcome", "link"] as const).map((key) => <TextField key={key} label={({ name: "Project name", problem: "Problem", built: "What you built", technologies: "Technologies", contribution: "Your contribution", outcome: "Result", link: "Link" })[key]} value={item[key]} onChange={(value) => updateArray("projects", index, { [key]: value })} multiline={["problem", "built", "contribution"].includes(key)} />)}
+        {(["name", "problem", "built", "technologies", "contribution", "outcome", "link"] as const).map((key) => <TextField key={key} label={({ name: "Project name", problem: "Problem", built: "What you built", technologies: "Technologies", contribution: "Your contribution", outcome: "Result", link: "Link" })[key]} value={item[key]} maxLength={key === "link" ? 500 : undefined} onChange={(value) => updateArray("projects", index, { [key]: value })} multiline={["problem", "built", "contribution", "outcome"].includes(key)} />)}
       </div><TextField label="CV bullets (one per line)" value={item.bullets.join("\n")} onChange={(value) => updateArray("projects", index, { bullets: value.split("\n") })} multiline />
         <button className="text-button" onClick={() => updateArray("projects", index, { bullets: [projectBullet(item)].filter(Boolean) })}>Rewrite from my facts</button>
       </div>)}

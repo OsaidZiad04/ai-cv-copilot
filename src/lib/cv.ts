@@ -6,16 +6,13 @@ export function splitList(value: string): string[] { return value.split(/[,;\n]/
 
 export function projectBullet(project: CandidateProfile["projects"][number]): string {
   const action = clean(project.contribution || project.built);
-  const context = clean(project.built);
   const result = clean(project.outcome);
   const technology = clean(project.technologies);
-  const sentence = action || context;
-  if (!sentence) return "";
-  const parts = [sentence];
-  if (context && context !== action) parts.push(context.charAt(0).toLowerCase() + context.slice(1));
-  if (technology && !parts.join(" ").toLowerCase().includes(technology.toLowerCase())) parts.push(`using ${technology}`);
-  if (result) parts.push(`resulting in ${result.charAt(0).toLowerCase() + result.slice(1)}`);
-  return clean(parts.join("; ")).replace(/[.;\s]+$/, "") + ".";
+  if (!action) return "";
+  const main = technology && !action.toLowerCase().includes(technology.toLowerCase())
+    ? `${action.replace(/[.;\s]+$/, "")} using ${technology}` : action;
+  const sentences = [main, result].filter(Boolean);
+  return sentences.map((sentence) => clean(sentence).replace(/[.;\s]+$/, "") + ".").join(" ");
 }
 
 export function experienceBullet(details: string): string {
@@ -26,13 +23,13 @@ export function experienceBullet(details: string): string {
 export function fallbackSummary(profile: CandidateProfile): string {
   const role = clean(profile.careerGoal.role);
   const major = clean(profile.education[0]?.major || profile.education[0]?.degree || "");
-  const evidence = profile.projects.find((p) => hasText(p.built) || hasText(p.name));
-  const skill = Object.values(profile.skills).flatMap(splitList)[0];
-  const identity = major ? `Candidate with a ${major} background` : role ? `Early-career ${role.toLowerCase()} candidate` : "Early-career candidate";
-  const work = evidence ? ` with project experience in ${clean(evidence.name || evidence.built)}` : "";
+  const project = profile.projects.find((item) => hasText(item.name));
+  const skill = splitList(project?.technologies || "")[0] || Object.values(profile.skills).flatMap(splitList)[0];
+  const identity = major ? `${major} candidate` : "Early-career candidate";
+  const evidence = project ? ` with project work on ${clean(project.name)}` : "";
   const tools = skill ? ` using ${skill}` : "";
-  const goal = role ? ` seeking ${role} opportunities` : "";
-  return `${identity}${work}${tools}${goal}.`;
+  const goal = role ? ` Seeking ${role} opportunities.` : "";
+  return `${identity}${evidence}${tools}.${goal}`;
 }
 
 export function hasUnsupportedNumbers(generated: string, source: string): boolean {
@@ -44,7 +41,8 @@ export type CvSection = "education" | "projects" | "experience" | "skills" | "ce
 
 export function visibleSections(profile: CandidateProfile): CvSection[] {
   const hasExperience = profile.experience.some((e) => hasText(e.role) || hasText(e.organization) || e.bullets.some(hasText));
-  const order: CvSection[] = hasExperience
+  const isCurrentStudent = /expected|current|present/i.test(profile.education[0]?.graduation || "");
+  const order: CvSection[] = hasExperience && !isCurrentStudent
     ? ["experience", "education", "projects", "skills", "certifications", "training", "volunteering", "awards", "languages"]
     : ["education", "projects", "experience", "skills", "training", "certifications", "volunteering", "awards", "languages"];
   return order.filter((section) => {
