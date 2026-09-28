@@ -69,7 +69,7 @@ To test without a key, use `LLM_PROVIDER=mock`. To avoid all provider calls, use
 
 ## Event Operator Guide
 
-1. Run `npm run dev` for a local event station, or open the deployed app. Load each demo profile once before attendees arrive.
+1. For a local event station, run `npm run build` and then `npm run start`, or open the deployed app. Load each demo profile once before attendees arrive. Use `npm run dev` only while developing.
 2. Start a short test CV and check the status indicator after the first answer. **AI Enhanced** means Groq responded; **Guided Mode** means the deterministic flow is active. Mock mode intentionally displays Guided Mode to students.
 3. If AI assistance is slow or unavailable, select **Continue without AI** during the interview, or **Build Without AI** on the start screen. Existing answers remain available.
 4. After each candidate, select **End & clear session**. Check the browser tab before handing the station to the next person.
