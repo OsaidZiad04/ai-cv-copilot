@@ -101,7 +101,7 @@ The candidate profile and unfinished answers are held in the current browser tab
 
 - The CV uses one English ATS Clean template. PDF export uses the browser print dialog rather than a server-generated PDF.
 - The interview captures one primary education entry and one project/experience entry at a time. More can be added in the editor.
-- AI text is instructed to preserve facts and validated structurally. Number and graduation-status guards catch some unsupported claims, but a human should verify all wording before sharing the CV.
+- AI text is instructed to preserve facts and validated structurally. Number, outcome-wording, and graduation-status guards catch some unsupported claims, but a human should verify all wording before sharing the CV.
 - Headless Chrome visual and print checks and live Groq requests passed. The actual event devices, network, printer/PDF setup, and event account limits still need an operator check.
 - Session state is local to one tab. There is no account, cloud sync, or server-side recovery.
 - No job-description tailoring or multilingual experience is included in this MVP.

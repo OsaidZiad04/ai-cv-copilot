@@ -37,6 +37,12 @@ export function hasUnsupportedNumbers(generated: string, source: string): boolea
   return (generated.match(/\d+(?:[.,]\d+)?%?/g) || []).some((number) => !supplied.has(number));
 }
 
+export function hasUnsupportedOutcomeClaim(generated: string, source: string): boolean {
+  const roots = ["increas", "reduc", "improv", "streamlin", "boost", "optimiz", "sav", "accelerat", "enhanc"];
+  return roots.some((root) => new RegExp(`\\b${root}[a-z]*\\b`, "i").test(generated)
+    && !new RegExp(`\\b${root}[a-z]*\\b`, "i").test(source));
+}
+
 export function hasUnsupportedGraduationClaim(generated: string, profile: CandidateProfile): boolean {
   return ((/\bgraduate\b|\bgraduated\b/i.test(generated)
     && !profile.education.some((entry) => /\bgraduated\b|\bcompleted\b/i.test(entry.graduation)))

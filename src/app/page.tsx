@@ -5,7 +5,7 @@ import { CvDocument } from "@/components/CvDocument";
 import { ProfileEditor } from "@/components/ProfileEditor";
 import { DemoControls } from "@/components/DemoControls";
 import { demoProfiles } from "@/lib/demo";
-import { fallbackSummary, hasUnsupportedGraduationClaim, hasUnsupportedNumbers } from "@/lib/cv";
+import { fallbackSummary, hasUnsupportedGraduationClaim, hasUnsupportedNumbers, hasUnsupportedOutcomeClaim } from "@/lib/cv";
 import { applyStep, guidedReply, interviewSteps, questionForStep, valuesForStep } from "@/lib/interview";
 import { readinessChecks } from "@/lib/review";
 import { candidateProfileSchema, emptyProfile, type CandidateProfile } from "@/lib/schema";
@@ -108,7 +108,7 @@ export default function Home() {
           if (!gate.current.isCurrent(submission)) return;
           if (typeof data.reply !== "string" || typeof data.bullet !== "string") throw new Error("Invalid interview response");
           nextReply = data.reply;
-          improvedBullet = hasUnsupportedNumbers(data.bullet, JSON.stringify(safeInput)) ? "" : data.bullet;
+          improvedBullet = hasUnsupportedNumbers(data.bullet, JSON.stringify(safeInput)) || hasUnsupportedOutcomeClaim(data.bullet, JSON.stringify(safeInput)) ? "" : data.bullet;
           nextMode = data.mode === "groq" && improvedBullet.trim() ? "groq" : "guided";
           if (nextMode === "groq" && cacheKey) setEnhancements((current) => ({ ...Object.fromEntries(Object.entries(current).filter(([key]) => !key.startsWith(`${step.id}:`))), [cacheKey]: improvedBullet }));
           if (data.fallback || (data.mode === "groq" && !improvedBullet)) {
@@ -144,7 +144,8 @@ export default function Home() {
           const data = await postJson("/api/summary", profile);
           if (!gate.current.isCurrent(submission)) return;
           if (typeof data.summary !== "string") throw new Error("Invalid summary");
-          const accepted = !hasUnsupportedNumbers(data.summary, JSON.stringify(toSummaryLlmInput(profile))) && !hasUnsupportedGraduationClaim(data.summary, profile);
+          const summaryEvidence = JSON.stringify(toSummaryLlmInput(profile));
+          const accepted = !hasUnsupportedNumbers(data.summary, summaryEvidence) && !hasUnsupportedOutcomeClaim(data.summary, summaryEvidence) && !hasUnsupportedGraduationClaim(data.summary, profile);
           summary = accepted && data.summary.trim() ? data.summary : fallbackSummary(profile);
           setMode(data.mode === "groq" && accepted && data.summary.trim() ? "groq" : "guided");
           if (data.fallback || !accepted) {

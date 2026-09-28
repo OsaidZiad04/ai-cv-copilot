@@ -19,7 +19,7 @@ require.extensions[".ts"] = (module, filename) => {
 require.extensions[".tsx"] = require.extensions[".ts"];
 const { candidateProfileSchema, emptyProfile } = require("../src/lib/schema.ts");
 const { applyStep } = require("../src/lib/interview.ts");
-const { fallbackSummary, visibleSections, projectBullet, hasUnsupportedNumbers, hasUnsupportedGraduationClaim } = require("../src/lib/cv.ts");
+const { fallbackSummary, visibleSections, projectBullet, hasUnsupportedNumbers, hasUnsupportedOutcomeClaim, hasUnsupportedGraduationClaim } = require("../src/lib/cv.ts");
 const { selectProvider, parseAiResponse } = require("../src/lib/providers.ts");
 const { toBulletLlmInput, toSummaryLlmInput, enhancementCacheKey, isDemoMode } = require("../src/lib/llm-input.ts");
 const { readinessChecks } = require("../src/lib/review.ts");
@@ -58,6 +58,13 @@ test("an unsupported graduation claim is rejected before appearing in the CV", (
   assert.equal(toSummaryLlmInput(profile).education[0].graduation, "");
   profile.education[0].graduation = "Graduated 2025";
   assert.equal(hasUnsupportedGraduationClaim("Marketing graduate with Canva experience", profile), false);
+});
+
+test("unsupported outcome language from a sparse profile is rejected", () => {
+  const evidence = "Organized survey responses in Excel and created a summary table";
+  assert.equal(hasUnsupportedOutcomeClaim("Created a summary table to streamline data analysis.", evidence), true);
+  assert.equal(hasUnsupportedOutcomeClaim("Created a summary table in Excel.", evidence), false);
+  assert.equal(hasUnsupportedOutcomeClaim("Improved attendance at an event.", "Improved attendance at an event"), false);
 });
 
 test("provider selection supports mock, guided and missing Groq credentials", async () => {
