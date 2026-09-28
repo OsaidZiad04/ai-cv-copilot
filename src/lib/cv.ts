@@ -37,6 +37,13 @@ export function hasUnsupportedNumbers(generated: string, source: string): boolea
   return (generated.match(/\d+(?:[.,]\d+)?%?/g) || []).some((number) => !supplied.has(number));
 }
 
+export function hasUnsupportedGraduationClaim(generated: string, profile: CandidateProfile): boolean {
+  return ((/\bgraduate\b|\bgraduated\b/i.test(generated)
+    && !profile.education.some((entry) => /\bgraduated\b|\bcompleted\b/i.test(entry.graduation)))
+    || (/\bexpected\b/i.test(generated)
+      && !profile.education.some((entry) => /\bexpected\b/i.test(entry.graduation))));
+}
+
 export type CvSection = "education" | "projects" | "experience" | "skills" | "certifications" | "training" | "volunteering" | "awards" | "languages";
 
 export function visibleSections(profile: CandidateProfile): CvSection[] {

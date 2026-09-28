@@ -3,12 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import { CvDocument } from "@/components/CvDocument";
 import { ProfileEditor } from "@/components/ProfileEditor";
+import { DemoControls } from "@/components/DemoControls";
 import { demoProfiles } from "@/lib/demo";
-import { fallbackSummary, hasUnsupportedNumbers } from "@/lib/cv";
+import { fallbackSummary, hasUnsupportedGraduationClaim, hasUnsupportedNumbers } from "@/lib/cv";
 import { applyStep, guidedReply, interviewSteps, questionForStep, valuesForStep } from "@/lib/interview";
 import { readinessChecks } from "@/lib/review";
 import { candidateProfileSchema, emptyProfile, type CandidateProfile } from "@/lib/schema";
 import { restoreSession, sessionKey, SubmissionGate, type SavedSession } from "@/lib/session";
+import { enhancementCacheKey, isDemoMode, toBulletLlmInput, toSummaryLlmInput } from "@/lib/llm-input";
 
 type Phase = "landing" | "interview" | "profile" | "workspace";
 type Mode = "groq" | "mock" | "guided";
@@ -29,16 +31,19 @@ export default function Home() {
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState("");
   const [hydrated, setHydrated] = useState(false);
+  const [operatorMode, setOperatorMode] = useState(false);
+  const [enhancements, setEnhancements] = useState<Record<string, string>>({});
   const gate = useRef(new SubmissionGate());
   const controller = useRef<AbortController | null>(null);
 
   useEffect(() => {
+    setOperatorMode(isDemoMode(window.location.search));
     try {
       const parsed = restoreSession(sessionStorage.getItem(sessionKey));
       if (parsed) {
         setProfile(parsed.profile); setPhase(parsed.phase); setStepIndex(parsed.stepIndex);
         setMode(parsed.mode); setAiEnabled(parsed.aiEnabled); setView(parsed.view);
-        setDraft(parsed.draft); setReply(parsed.reply);
+        setDraft(parsed.draft); setReply(parsed.reply); setEnhancements(parsed.enhancements);
       } else sessionStorage.removeItem(sessionKey);
     } catch { /* Private browsing may block session storage. The in-memory flow still works. */ }
     setHydrated(true);
@@ -48,9 +53,9 @@ export default function Home() {
     if (!hydrated) return;
     try {
       if (phase === "landing") sessionStorage.removeItem(sessionKey);
-      else sessionStorage.setItem(sessionKey, JSON.stringify({ phase, stepIndex, profile, mode, aiEnabled, view, draft, reply } satisfies SavedSession));
+      else sessionStorage.setItem(sessionKey, JSON.stringify({ phase, stepIndex, profile, mode, aiEnabled, view, draft, reply, enhancements } satisfies SavedSession));
     } catch { /* Continue in memory if storage is unavailable. */ }
-  }, [phase, stepIndex, profile, mode, aiEnabled, view, draft, reply, hydrated]);
+  }, [phase, stepIndex, profile, mode, aiEnabled, view, draft, reply, enhancements, hydrated]);
 
   const cancelPending = () => { gate.current.cancel(); controller.current?.abort(); controller.current = null; setBusy(false); };
   const postJson = async (path: string, body: unknown) => {
@@ -71,14 +76,14 @@ export default function Home() {
     cancelPending();
     try { sessionStorage.removeItem(sessionKey); } catch { /* Session storage can be unavailable. */ }
     setPhase("landing"); setProfile(emptyProfile()); setStepIndex(0);
-    setDraft({}); setReply(""); setNotice(""); setView("preview"); setMode("guided"); setAiEnabled(true);
+    setDraft({}); setReply(""); setNotice(""); setView("preview"); setMode("guided"); setAiEnabled(true); setEnhancements({});
   };
   const start = (enabled: boolean) => {
-    cancelPending(); setProfile(emptyProfile()); setStepIndex(0); setDraft({}); setReply(""); setNotice("");
+    cancelPending(); setProfile(emptyProfile()); setStepIndex(0); setDraft({}); setReply(""); setNotice(""); setEnhancements({});
     setAiEnabled(enabled); setMode("guided"); setPhase("interview");
   };
   const loadDemo = (index: number) => {
-    cancelPending(); setProfile(structuredClone(demoProfiles[index].profile)); setMode("mock"); setAiEnabled(false); setPhase("workspace"); setView("preview"); setNotice("Demo profile loaded. Replace it with your own information before exporting.");
+    cancelPending(); setProfile(structuredClone(demoProfiles[index].profile)); setMode("mock"); setAiEnabled(false); setEnhancements({}); setPhase("workspace"); setView("preview"); setNotice("Demo profile loaded. Replace it with your own information before exporting.");
   };
 
   const submitStep = async (event: React.FormEvent) => {
@@ -92,16 +97,27 @@ export default function Home() {
     let nextMode: Mode = "guided";
     let nextReply = guidedReply(step.id, values);
     try {
-      if (aiEnabled) {
+      const safeInput = toBulletLlmInput(step.id, values, profile.careerGoal.role);
+      const cacheKey = enhancementCacheKey(step.id, values, profile.careerGoal.role);
+      if (aiEnabled && safeInput && cacheKey && enhancements[cacheKey]) {
+        improvedBullet = enhancements[cacheKey];
+        nextMode = "groq";
+      } else if (aiEnabled && safeInput) {
         try {
           const data = await postJson("/api/interview", { step: step.id, values, targetRole: profile.careerGoal.role });
           if (!gate.current.isCurrent(submission)) return;
           if (typeof data.reply !== "string" || typeof data.bullet !== "string") throw new Error("Invalid interview response");
           nextReply = data.reply;
-          improvedBullet = hasUnsupportedNumbers(data.bullet, Object.values(values).join(" ")) ? "" : data.bullet;
-          nextMode = data.mode === "groq" ? "groq" : data.mode === "mock" ? "mock" : "guided";
+          improvedBullet = hasUnsupportedNumbers(data.bullet, JSON.stringify(safeInput)) ? "" : data.bullet;
+          nextMode = data.mode === "groq" && improvedBullet.trim() ? "groq" : "guided";
+          if (nextMode === "groq" && cacheKey) setEnhancements((current) => ({ ...Object.fromEntries(Object.entries(current).filter(([key]) => !key.startsWith(`${step.id}:`))), [cacheKey]: improvedBullet }));
+          if (data.fallback || (data.mode === "groq" && !improvedBullet)) {
+            setAiEnabled(false);
+            setNotice("AI assistance is temporarily unavailable. Guided Mode is active.");
+          }
         } catch {
           if (!gate.current.isCurrent(submission)) return;
+          setAiEnabled(false);
           setNotice("AI assistance is temporarily unavailable. Guided Mode is active.");
         }
       }
@@ -128,10 +144,16 @@ export default function Home() {
           const data = await postJson("/api/summary", profile);
           if (!gate.current.isCurrent(submission)) return;
           if (typeof data.summary !== "string") throw new Error("Invalid summary");
-          summary = hasUnsupportedNumbers(data.summary, JSON.stringify(profile)) ? fallbackSummary(profile) : data.summary;
-          setMode(data.mode === "groq" ? "groq" : data.mode === "mock" ? "mock" : "guided");
+          const accepted = !hasUnsupportedNumbers(data.summary, JSON.stringify(toSummaryLlmInput(profile))) && !hasUnsupportedGraduationClaim(data.summary, profile);
+          summary = accepted && data.summary.trim() ? data.summary : fallbackSummary(profile);
+          setMode(data.mode === "groq" && accepted && data.summary.trim() ? "groq" : "guided");
+          if (data.fallback || !accepted) {
+            setAiEnabled(false);
+            setNotice("AI wording was unavailable. Guided Mode created an editable summary.");
+          }
         } catch {
           if (!gate.current.isCurrent(submission)) return;
+          setAiEnabled(false);
           setMode("guided"); setNotice("AI assistance is temporarily unavailable. Guided Mode created an editable summary.");
         }
       }
@@ -160,10 +182,10 @@ export default function Home() {
     {phase === "landing" && <main className="landing">
       <div className="landing-copy"><span className="eyebrow"><span className="eyebrow-line" /> YOUR CAREER, IN FOCUS</span><h1>Make your first<br /><em>impression count.</em></h1><p className="lead">Build a professional first CV through a short guided conversation. Show what you have done, even if you have not had a formal job yet.</p>
         <div className="landing-actions"><button className="button primary" onClick={() => start(true)}>Start My CV <span aria-hidden="true">↗</span></button><button className="button secondary" onClick={() => start(false)}>Build Without AI</button></div>
-        <div className="privacy-note"><span aria-hidden="true">◇</span><p><strong>Your privacy matters.</strong> Your CV stays in this browser session. When AI assistance is available, your answers may be sent to the configured AI provider for processing. Avoid entering information you do not want processed.</p></div>
+        <div className="privacy-note"><span aria-hidden="true">◇</span><p><strong>Your privacy matters.</strong> Your CV stays in this browser session. When AI assistance is available, selected professional details may be sent to the configured AI provider. Contact fields are excluded from those requests. Avoid entering information you do not want processed.</p></div>
       </div>
       <div className="landing-visual" aria-hidden="true"><div className="visual-orbit orbit-one" /><div className="visual-orbit orbit-two" /><div className="visual-card"><div className="visual-top"><span>YOUR NEXT CHAPTER</span><span>01 / 04</span></div><div className="visual-name">Your story,<br />well told<span>.</span></div><div className="visual-rule" /><div className="visual-row"><span>01</span><div><strong>Talk it through</strong><small>A few thoughtful questions</small></div><span>↗</span></div><div className="visual-row"><span>02</span><div><strong>Shape the details</strong><small>Skills backed by evidence</small></div><span>↗</span></div><div className="visual-row"><span>03</span><div><strong>Leave ready</strong><small>A clean CV you can share</small></div><span>↗</span></div></div><div className="visual-caption">FROM FIRST THOUGHT TO FIRST DRAFT</div></div>
-      <div className="demo-strip"><div><span className="eyebrow">FOR EVENT TEAMS</span><strong>Need a quick walkthrough?</strong></div><div className="demo-actions">{demoProfiles.map((demo, i) => <button key={demo.label} onClick={() => loadDemo(i)}>{demo.label} <span>↗</span></button>)}</div><span className="demo-label">DEMO DATA</span></div>
+      <DemoControls enabled={operatorMode} onLoad={loadDemo} />
     </main>}
 
     {phase === "interview" && <main className="flow-layout no-print"><aside className="flow-sidebar"><span className="eyebrow">BUILD YOUR STORY</span><h2>A better CV starts with a conversation.</h2><p>We will work through the essentials, one step at a time. You can refine every line later.</p><div className="step-list">{interviewSteps.map((item, i) => <div className={`step-nav ${i === stepIndex ? "active" : ""} ${i < stepIndex ? "done" : ""}`} key={item.id}><span>{String(i + 1).padStart(2, "0")}</span>{item.eyebrow.split(" / ")[1]}</div>)}</div></aside>

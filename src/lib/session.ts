@@ -12,6 +12,7 @@ const savedSessionSchema = z.object({
   view: z.enum(["preview", "edit", "review"]),
   draft: z.record(z.string().max(2000)).refine((value) => Object.keys(value).length <= 12),
   reply: z.string().max(500),
+  enhancements: z.record(z.string().max(500)).refine((value) => Object.keys(value).length <= 3 && Object.keys(value).every((key) => key.length <= 12_000)).default({}),
 });
 
 export type SavedSession = z.infer<typeof savedSessionSchema>;

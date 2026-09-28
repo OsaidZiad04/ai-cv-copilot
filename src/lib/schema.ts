@@ -40,7 +40,6 @@ export const interviewRequestSchema = z.object({
 });
 
 export const aiResponseSchema = z.object({
-  reply: z.string().min(1).max(500),
   bullet: z.string().max(500),
 });
 

@@ -1,5 +1,6 @@
 import { clean, experienceBullet, projectBullet, splitList } from "./cv";
 import type { CandidateProfile } from "./schema";
+import { professionalFact } from "./llm-input";
 
 export type StepId = "personal" | "goal" | "education" | "project" | "experience" | "skills" | "extras";
 export type Field = { key: string; label: string; placeholder?: string; optional?: boolean; multiline?: boolean };
@@ -92,12 +93,12 @@ export function applyStep(profile: CandidateProfile, step: StepId, values: Recor
   if (step === "project") {
     if (!v("name") && !v("built")) return { ...profile, projects: profile.projects.slice(1) };
     const item = { name: v("name"), problem: v("problem"), built: v("built"), technologies: v("technologies"), contribution: v("contribution"), outcome: v("outcome"), link: v("link"), bullets: [] as string[] };
-    item.bullets = [clean(improvedBullet) || projectBullet(item)].filter(Boolean);
+    item.bullets = [experienceBullet(improvedBullet) || projectBullet({ ...item, built: professionalFact(item.built), contribution: professionalFact(item.contribution), outcome: professionalFact(item.outcome), technologies: professionalFact(item.technologies) })].filter(Boolean);
     return { ...profile, projects: [item, ...profile.projects.slice(1)] };
   }
   if (step === "experience") {
     if (!v("role") && !v("organization") && !v("details")) return { ...profile, experience: profile.experience.slice(1) };
-    return { ...profile, experience: [{ role: v("role"), organization: v("organization"), dates: v("dates"), details: v("details"), bullets: [clean(improvedBullet) || experienceBullet(v("details"))].filter(Boolean) }, ...profile.experience.slice(1)] };
+    return { ...profile, experience: [{ role: v("role"), organization: v("organization"), dates: v("dates"), details: v("details"), bullets: [experienceBullet(improvedBullet) || experienceBullet(professionalFact(v("details")))].filter(Boolean) }, ...profile.experience.slice(1)] };
   }
   if (step === "skills") return { ...profile, skills: { programming: v("programming"), aiData: v("aiData"), tools: v("tools"), domain: v("domain"), soft: v("soft") } };
   return { ...profile, certifications: splitList(v("certifications")), training: splitList(v("training")), volunteering: splitList(v("volunteering")), awards: splitList(v("awards")), languages: splitList(v("languages")) };
