@@ -4,6 +4,11 @@ export function clean(value: string): string { return value.trim().replace(/\s+/
 export function hasText(value: string): boolean { return Boolean(clean(value)); }
 export function splitList(value: string): string[] { return value.split(/[,;\n]/).map(clean).filter(Boolean); }
 
+export function hasProjectEvidence(project: CandidateProfile["projects"][number]): boolean {
+  return [project.name, project.problem, project.built, project.contribution, project.outcome, project.technologies, project.link].some(hasText)
+    || project.bullets.some(hasText);
+}
+
 export function projectBullet(project: CandidateProfile["projects"][number]): string {
   const action = clean(project.contribution || project.built);
   const result = clean(project.outcome);
@@ -61,7 +66,7 @@ export function visibleSections(profile: CandidateProfile): CvSection[] {
   return order.filter((section) => {
     if (section === "skills") return Object.values(profile.skills).some(hasText);
     if (section === "education") return profile.education.some((e) => hasText(e.institution) || hasText(e.degree));
-    if (section === "projects") return profile.projects.some((p) => hasText(p.name) || hasText(p.built));
+    if (section === "projects") return profile.projects.some(hasProjectEvidence);
     if (section === "experience") return hasExperience;
     return profile[section].some(hasText);
   });

@@ -34,6 +34,8 @@ export function CvDocument({ profile }: { profile: CandidateProfile }) {
       {section === "projects" && profile.projects.map((item, i) => <div className="cv-entry" key={i}>
         <div className="cv-entry-title"><strong>{item.name || "Project"}</strong>{item.link && <SafeLink value={item.link} />}</div>
         {item.technologies && <p className="cv-muted">{item.technologies}</p>}
+        {!item.bullets.some(hasText) && !hasText(item.built) && !hasText(item.contribution)
+          && [item.problem, item.outcome].filter(hasText).map((fact, j) => <p key={j}>{fact}</p>)}
         {item.bullets.filter(hasText).length > 0 && <ul>{item.bullets.filter(hasText).map((bullet, j) => <li key={j}>{bullet}</li>)}</ul>}
       </div>)}
       {section === "experience" && profile.experience.map((item, i) => <div className="cv-entry" key={i}>

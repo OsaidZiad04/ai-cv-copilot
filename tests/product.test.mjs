@@ -329,3 +329,108 @@ test("a rate limit falls back to valid Guided CV without retries", async () => {
     for (const [key, value] of Object.entries(before)) if (value === undefined) delete process.env[key]; else process.env[key] = value;
   }
 });
+
+test("O01 contribution-only project survives capture and untitled CV rendering", () => {
+  const contribution = "Designed the survey and analyzed 40 responses";
+  const profile = applyStep(emptyProfile(), "project", { contribution });
+  assert.equal(candidateProfileSchema.safeParse(profile).success, true);
+  assert.equal(profile.projects.length, 1);
+  assert.equal(profile.projects[0].name, "");
+  assert.equal(profile.projects[0].built, "");
+  assert.deepEqual(profile.projects[0].bullets, [contribution + "."]);
+  assert.ok(visibleSections(profile).includes("projects"));
+  const html = renderToStaticMarkup(CvDocument({ profile }));
+  assert.match(html, /data-section="projects"/);
+  assert.ok(html.includes(contribution));
+  assert.doesNotMatch(html, /data-section="experience"/);
+});
+
+test("O01 built-only project retains existing wording", () => {
+  const profile = applyStep(emptyProfile(), "project", { built: "Built a class survey" });
+  assert.equal(profile.projects.length, 1);
+  assert.deepEqual(profile.projects[0].bullets, ["Built a class survey."]);
+});
+
+test("O01 supplied problem and contribution remain distinct facts", () => {
+  const profile = applyStep(emptyProfile(), "project", { problem: "Coursework simulation", contribution: "Compared class assumptions" });
+  assert.equal(profile.projects[0].problem, "Coursework simulation");
+  assert.equal(profile.projects[0].contribution, "Compared class assumptions");
+  assert.deepEqual(profile.projects[0].bullets, ["Compared class assumptions."]);
+  assert.equal(profile.experience.length, 0);
+});
+
+test("O01 empty and whitespace-only projects are still omitted", () => {
+  for (const values of [{}, Object.fromEntries(["name", "problem", "built", "technologies", "contribution", "outcome", "link"].map(key => [key, " \n\t "]))]) {
+    const profile = applyStep(emptyProfile(), "project", values);
+    assert.equal(profile.projects.length, 0);
+    assert.ok(!visibleSections(profile).includes("projects"));
+  }
+});
+
+test("O01 context, result, tools and link survive without manufacturing an action", () => {
+  for (const [key, value] of Object.entries({ problem: "Class data lacked labels", outcome: "Presented findings to classmates", technologies: "Excel", link: "https://example.com/class-project" })) {
+    const profile = applyStep(emptyProfile(), "project", { [key]: value });
+    assert.equal(profile.projects.length, 1, key);
+    assert.equal(profile.projects[0][key], value);
+    assert.deepEqual(profile.projects[0].bullets, []);
+    assert.equal(profile.projects[0].name, "");
+    assert.equal(profile.experience.length, 0);
+    assert.ok(renderToStaticMarkup(CvDocument({ profile })).includes(value), key);
+  }
+});
+
+test("O01 Back and revisit replace the first project without duplicating later entries", () => {
+  let profile = applyStep(emptyProfile(), "project", { contribution: "Prepared survey questions" });
+  const later = { ...profile.projects[0], name: "Other class work", contribution: "Reviewed notes", bullets: ["Reviewed notes."] };
+  profile.projects.push(later);
+  for (let i = 0; i < 3; i++) profile = applyStep(profile, "project", { ...valuesForStep(profile, "project"), contribution: "Prepared and reviewed survey questions" });
+  assert.equal(profile.projects.length, 2);
+  assert.deepEqual(profile.projects[1], later);
+  assert.deepEqual(profile.projects[0].bullets, ["Prepared and reviewed survey questions."]);
+  assert.deepEqual(applyStep(profile, "project", {}).projects, [later]);
+});
+
+test("O01 normal titled project is byte-for-byte unchanged", () => {
+  const values = { name: "Campus survey", problem: "Understand class feedback", built: "Built a survey", contribution: "Analyzed responses", technologies: "Excel", outcome: "Presented findings", link: "https://example.com/survey" };
+  assert.deepEqual(applyStep(emptyProfile(), "project", values).projects, [{ ...values, bullets: ["Analyzed responses using Excel. Presented findings."] }]);
+});
+
+test("O01 manual untitled evidence is visible without restoring deliberately cleared bullets", () => {
+  const profile = applyStep(emptyProfile(), "project", { contribution: "Prepared survey questions" });
+  profile.projects[0].bullets = ["My edited wording"];
+  assert.ok(renderToStaticMarkup(CvDocument({ profile })).includes("My edited wording"));
+  profile.projects[0].bullets = [];
+  assert.ok(!renderToStaticMarkup(CvDocument({ profile })).includes("Prepared survey questions"));
+});
+
+test("O01 newly visible context is escaped and never becomes executable markup", () => {
+  const profile = applyStep(emptyProfile(), "project", { problem: "<script>alert('synthetic')</script>" });
+  const html = renderToStaticMarkup(CvDocument({ profile }));
+  assert.ok(html.includes("&lt;script&gt;"));
+  assert.ok(!html.includes("<script>"));
+});
+
+test("O01 contribution-only works through existing Guided and enhanced API paths", async () => {
+  const before = { LLM_PROVIDER: process.env.LLM_PROVIDER, GROQ_API_KEY: process.env.GROQ_API_KEY, GROQ_MODEL: process.env.GROQ_MODEL };
+  const originalFetch = globalThis.fetch;
+  try {
+    const values = { contribution: "Prepared survey questions" };
+    for (const provider of ["guided", "groq"]) {
+      process.env.LLM_PROVIDER = provider;
+      process.env.GROQ_API_KEY = "test-key";
+      process.env.GROQ_MODEL = "test-model";
+      globalThis.fetch = async () => new Response(JSON.stringify({ choices: [{ message: { content: '{"bullet":"Prepared survey questions."}' } }] }), { status: 200 });
+      const response = await interviewPost(new Request("http://localhost/api/interview", { method: "POST", body: JSON.stringify({ step: "project", values, targetRole: "Analyst" }) }));
+      const output = await response.json();
+      assert.equal(response.status, 200);
+      assert.equal(output.mode, provider);
+      const profile = applyStep(emptyProfile(), "project", values, output.bullet);
+      assert.equal(profile.projects.length, 1);
+      assert.equal(candidateProfileSchema.safeParse(profile).success, true);
+      assert.deepEqual(profile.projects[0].bullets, ["Prepared survey questions."]);
+    }
+  } finally {
+    globalThis.fetch = originalFetch;
+    for (const [key, value] of Object.entries(before)) if (value === undefined) delete process.env[key]; else process.env[key] = value;
+  }
+});

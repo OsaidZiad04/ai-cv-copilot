@@ -1,4 +1,4 @@
-import { clean, experienceBullet, projectBullet, splitList } from "./cv";
+import { clean, experienceBullet, hasProjectEvidence, projectBullet, splitList } from "./cv";
 import type { CandidateProfile } from "./schema";
 import { professionalFact } from "./llm-input";
 
@@ -91,8 +91,8 @@ export function applyStep(profile: CandidateProfile, step: StepId, values: Recor
   if (step === "goal") return { ...profile, careerGoal: { role: v("role"), field: v("field"), opportunity: v("opportunity") }, personal: { ...profile.personal, headline: v("role") } };
   if (step === "education") return { ...profile, education: [{ institution: v("institution"), degree: v("degree"), major: v("major"), graduation: v("graduation"), gpa: v("gpa") }] };
   if (step === "project") {
-    if (!v("name") && !v("built")) return { ...profile, projects: profile.projects.slice(1) };
     const item = { name: v("name"), problem: v("problem"), built: v("built"), technologies: v("technologies"), contribution: v("contribution"), outcome: v("outcome"), link: v("link"), bullets: [] as string[] };
+    if (!hasProjectEvidence(item)) return { ...profile, projects: profile.projects.slice(1) };
     item.bullets = [experienceBullet(improvedBullet) || projectBullet({ ...item, built: professionalFact(item.built), contribution: professionalFact(item.contribution), outcome: professionalFact(item.outcome), technologies: professionalFact(item.technologies) })].filter(Boolean);
     return { ...profile, projects: [item, ...profile.projects.slice(1)] };
   }
