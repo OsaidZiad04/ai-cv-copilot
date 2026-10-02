@@ -1,0 +1,372 @@
+{
+  "synthetic": true,
+  "calls": 0,
+  "externalData": 0,
+  "sequences": 42,
+  "conservativeNoise": [
+    {
+      "field": "institution",
+      "unchangedGuidedSummary": true,
+      "summaryWarning": true,
+      "reason": "Conservative summary dependency superset; no semantic support claim"
+    },
+    {
+      "field": "gpa",
+      "unchangedGuidedSummary": true,
+      "summaryWarning": true,
+      "reason": "Conservative summary dependency superset; no semantic support claim"
+    },
+    {
+      "field": "secondProjectContribution",
+      "unchangedGuidedSummary": true,
+      "summaryWarning": true,
+      "reason": "Conservative summary dependency superset; no semantic support claim"
+    },
+    {
+      "field": "experienceDetails",
+      "unchangedGuidedSummary": true,
+      "summaryWarning": true,
+      "reason": "Conservative summary dependency superset; no semantic support claim"
+    }
+  ],
+  "rows": [
+    {
+      "label": "I01-I04 guided built",
+      "origin": "guided",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I01-I04 guided contribution",
+      "origin": "guided",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I01-I04 guided technologies",
+      "origin": "guided",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I01-I04 guided outcome",
+      "origin": "guided",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I01-I04 groq built",
+      "origin": "groq",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I01-I04 groq contribution",
+      "origin": "groq",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I01-I04 groq technologies",
+      "origin": "groq",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I01-I04 groq outcome",
+      "origin": "groq",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I01-I04 manual built",
+      "origin": "manual",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I01-I04 manual contribution",
+      "origin": "manual",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I01-I04 manual technologies",
+      "origin": "manual",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I01-I04 manual outcome",
+      "origin": "manual",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I05 guided role",
+      "origin": "guided",
+      "item": "current",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I05 guided organization",
+      "origin": "guided",
+      "item": "current",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I05 guided dates",
+      "origin": "guided",
+      "item": "current",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I05 guided details",
+      "origin": "guided",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I05 groq role",
+      "origin": "groq",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I05 groq organization",
+      "origin": "groq",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I05 groq dates",
+      "origin": "groq",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I05 groq details",
+      "origin": "groq",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I05 manual role",
+      "origin": "manual",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I05 manual organization",
+      "origin": "manual",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I05 manual dates",
+      "origin": "manual",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "I05 manual details",
+      "origin": "manual",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Summary dependency role",
+      "origin": "guided",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Summary dependency degree",
+      "origin": "guided",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Summary dependency graduation",
+      "origin": "guided",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Summary dependency skills",
+      "origin": "guided",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Summary dependency activity",
+      "origin": "guided",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Summary dependency training",
+      "origin": "guided",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Summary dependency award",
+      "origin": "guided",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Summary dependency certification",
+      "origin": "guided",
+      "item": "stale",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Unaffected contact fullName",
+      "origin": "guided",
+      "item": "current",
+      "summary": "current",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Unaffected contact email",
+      "origin": "guided",
+      "item": "current",
+      "summary": "current",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Unaffected contact phone",
+      "origin": "guided",
+      "item": "current",
+      "summary": "current",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Unaffected contact linkedin",
+      "origin": "guided",
+      "item": "current",
+      "summary": "current",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Unaffected contact location",
+      "origin": "guided",
+      "item": "current",
+      "summary": "current",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Normalized ordinary whitespace",
+      "origin": "guided",
+      "item": "current",
+      "summary": "current",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Unrelated project link",
+      "origin": "guided",
+      "item": "current",
+      "summary": "current",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Guided ignores role for factual bullet",
+      "origin": "guided",
+      "item": "current",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Deletion projects",
+      "item": "removed",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "Deletion experience",
+      "item": "removed",
+      "summary": "stale",
+      "textMutations": 0,
+      "unrelatedBulletWarnings": 0
+    },
+    {
+      "label": "24-fixture selected project edit sweep",
+      "checked": 19
+    }
+  ]
+}

@@ -1,9 +1,12 @@
 import { z } from "zod";
+import { freshnessSchema } from "./freshness";
 import { candidateProfileSchema } from "./schema";
 
 export const sessionKey = "ai-cv-copilot-session-v2";
 
 const savedSessionSchema = z.object({
+  evidenceNote: z.object({ skill: z.string().max(240), example: z.string().max(2000) }).nullable().optional(),
+  freshness: z.unknown().optional().transform((v) => freshnessSchema.safeParse(v).success ? freshnessSchema.parse(v) : undefined),
   phase: z.enum(["interview", "profile", "workspace"]),
   stepIndex: z.number().int().min(0).max(6),
   profile: candidateProfileSchema,

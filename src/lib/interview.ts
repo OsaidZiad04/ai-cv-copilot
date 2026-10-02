@@ -1,4 +1,5 @@
 import { clean, experienceBullet, hasProjectEvidence, projectBullet, splitList } from "./cv";
+import { firstSkillGap } from "./evidence";
 import type { CandidateProfile } from "./schema";
 import { professionalFact } from "./llm-input";
 
@@ -104,9 +105,10 @@ export function applyStep(profile: CandidateProfile, step: StepId, values: Recor
   return { ...profile, certifications: splitList(v("certifications")), training: splitList(v("training")), volunteering: splitList(v("volunteering")), awards: splitList(v("awards")), languages: splitList(v("languages")) };
 }
 
-export function guidedReply(step: StepId, values: Record<string, string>): string {
+export function guidedReply(step: StepId, values: Record<string, string>, profile?: CandidateProfile): string {
   if (step === "experience" && !values.role?.trim() && !values.details?.trim()) return "That's completely fine. Projects, training and university activities can show your strengths. Let's finish with the skills you can demonstrate.";
-  if (step === "skills" && values.programming?.toLowerCase().includes("python")) return "Good. Make sure your projects or activities show where you used Python. One last question before your draft.";
+  if (step === "skills" && values.evidenceExample?.trim()) return "Thanks. You can add that example to your CV details if it helps show your work.";
+  if (step === "skills" && profile && ["programming", "aiData", "tools", "domain"].some((key) => splitList(values[key] || "").length) && !firstSkillGap(profile, values)) return "Good. Your earlier examples already give context for those skills. One last question before your draft.";
   const replies: Record<StepId, string> = {
     personal: "Nice to meet you. Let's choose the opportunity your CV should support.",
     goal: "Great direction. Your education gives the reader useful context.",

@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "node scripts/lint.mjs",
     "typecheck": "tsc --noEmit",
-    "test": "node --test tests/product.test.mjs"
+    "test": "node --test tests/product.test.mjs tests/freshness.test.mjs tests/reviewer.test.mjs"
   },
   "dependencies": {
     "next": "16.2.9",

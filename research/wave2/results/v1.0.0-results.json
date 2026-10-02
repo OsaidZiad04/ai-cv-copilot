@@ -1,0 +1,2970 @@
+{
+  "researchDate": "2026-09-30",
+  "appRoot": "C:\\Users\\Lenovo\\.codex\\worktrees\\cv-quality\\ai-cv-copilot",
+  "mode": "Guided production functions; no provider or network call",
+  "measurementCaveats": [
+    "Exact evidence fragments are selected by fixture author. Loss does not equal total CV information loss.",
+    "Numeric check detects novel numeric tokens only; it does not validate metric meaning.",
+    "Summary relations are author-labeled evidence concerns, not proof the candidate lacks that skill.",
+    "Skill term matching does not prove substantive demonstration or role relevance.",
+    "Local function timing excludes network, user time, browser layout and PDF export."
+  ],
+  "aggregate": {
+    "fixtureCount": 24,
+    "sourceSchemaValid": 24,
+    "generatedSchemaValid": 24,
+    "evidenceFragmentsRetained": 39,
+    "evidenceFragmentsTotal": 42,
+    "profilesWithLostSelectedEvidence": 3,
+    "sourceProjectCount": 24,
+    "generatedProjectCount": 23,
+    "profilesWithDroppedProjects": 1,
+    "profilesWithNewNumericTokens": 0,
+    "profilesWithSummaryRelationsNeedingConfirmation": 6,
+    "summaryRelationsNeedingConfirmation": 7,
+    "profilesWithSummarySelectionIssues": 8,
+    "profilesWithLongBullets": 1,
+    "longBulletCount": 1,
+    "profilesWithToolRepetition": 3,
+    "profilesWithDuplicateSkills": 1,
+    "profilesWithPassiveExperience": 1,
+    "profilesWithFirstPersonBullets": 1,
+    "profilesWithBuzzwords": 1,
+    "profilesWithNamedProjectWithoutAction": 2,
+    "profilesWithPreferredLeadMismatch": 1,
+    "llmCalls": 0,
+    "localGenerationAndRenderMedianMs": 1.64
+  },
+  "results": [
+    {
+      "id": "01",
+      "scenario": "AI / CS student",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 01",
+          "headline": "AI Engineering Intern",
+          "email": "candidate-01@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "AI Engineering Intern",
+          "field": "Computer Science",
+          "opportunity": "Internship"
+        },
+        "summary": "Computer Science candidate with project work on Ticket Classifier using Python. Seeking AI Engineering Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Computer Science",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Ticket Classifier",
+            "problem": "Unsorted helpdesk requests",
+            "built": "Built a support-ticket classifier",
+            "technologies": "Python, scikit-learn",
+            "contribution": "Implemented Python text preprocessing",
+            "outcome": "Evaluated the classifier on 40 labeled examples",
+            "link": "",
+            "bullets": [
+              "Implemented Python text preprocessing using Python, scikit-learn. Evaluated the classifier on 40 labeled examples."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "Python",
+          "aiData": "scikit-learn",
+          "tools": "",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 01 AI Engineering Intern Amman, Jordan · candidate-01@example.com Professional Summary Computer Science candidate with project work on Ticket Classifier using Python. Seeking AI Engineering Intern opportunities. Education BSc in Computer Science Expected 2027 Synthetic University Projects Ticket Classifier Python, scikit-learn Implemented Python text preprocessing using Python, scikit-learn. Evaluated the classifier on 40 labeled examples. Skills Programming: Python AI & Data: scikit-learn",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "project.built",
+          "fragment": "Built a support-ticket classifier",
+          "retained": false
+        },
+        {
+          "field": "project.contribution",
+          "fragment": "Implemented Python text preprocessing",
+          "retained": true
+        },
+        {
+          "field": "project.outcome",
+          "fragment": "40 labeled examples",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 2,
+        "totalEvidenceFragments": 3,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 114,
+        "summaryCharacters": 124,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 1,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 38.407,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "SUPPLIED_EVIDENCE_LOST",
+        "projectBullets": "NEEDS_EDIT",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "EXPLICIT_TERM_IN_EVIDENCE",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "NEEDS_CONTEXT_OR_EDIT",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": [
+        "build-context-loss",
+        "tool-repetition"
+      ]
+    },
+    {
+      "id": "02",
+      "scenario": "Data Analyst; contribution-only interview",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 02",
+          "headline": "Data Analyst Intern",
+          "email": "candidate-02@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Data Analyst Intern",
+          "field": "Statistics",
+          "opportunity": "Internship"
+        },
+        "summary": "Statistics candidate using Excel. Seeking Data Analyst Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Statistics",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [],
+        "experience": [],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "Excel",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 02 Data Analyst Intern Amman, Jordan · candidate-02@example.com Professional Summary Statistics candidate using Excel. Seeking Data Analyst Intern opportunities. Education BSc in Statistics Expected 2027 Synthetic University Skills Tools & Platforms: Excel",
+      "sectionOrder": [
+        "education",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one.",
+        "Add a project, activity, training, or experience that shows your work."
+      ],
+      "evidence": [
+        {
+          "field": "project.contribution",
+          "fragment": "Designed the survey and analyzed 40 responses",
+          "retained": false
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 0,
+        "retainedEvidenceFragments": 0,
+        "totalEvidenceFragments": 1,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 0,
+        "summaryCharacters": 76,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [
+          "using Excel"
+        ],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "Excel"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.456,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "RELATION_NEEDS_CONFIRMATION",
+        "evidenceStrength": "SUPPLIED_EVIDENCE_LOST",
+        "projectBullets": "DROPPED",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "NEEDS_SELECTION_OR_EVIDENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "REVIEW_SUMMARY_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "NEEDS_CONTEXT_OR_EDIT",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "RECOVER_EVIDENCE"
+      },
+      "authorExpectedRisks": [
+        "contribution-only-loss",
+        "skill-without-demonstration"
+      ]
+    },
+    {
+      "id": "03",
+      "scenario": "Cybersecurity",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 03",
+          "headline": "Security Analyst Intern",
+          "email": "candidate-03@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Security Analyst Intern",
+          "field": "Cybersecurity",
+          "opportunity": "Internship"
+        },
+        "summary": "Cybersecurity candidate with project work on Network Lab using Wireshark. Seeking Security Analyst Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Cybersecurity",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Network Lab",
+            "problem": "",
+            "built": "Created an isolated lab network",
+            "technologies": "Wireshark",
+            "contribution": "Reviewed packet captures for unusual DNS traffic",
+            "outcome": "Documented findings in a lab report",
+            "link": "",
+            "bullets": [
+              "Reviewed packet captures for unusual DNS traffic using Wireshark. Documented findings in a lab report."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "Wireshark",
+          "domain": "Packet analysis",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 03 Security Analyst Intern Amman, Jordan · candidate-03@example.com Professional Summary Cybersecurity candidate with project work on Network Lab using Wireshark. Seeking Security Analyst Intern opportunities. Education BSc in Cybersecurity Expected 2027 Synthetic University Projects Network Lab Wireshark Reviewed packet captures for unusual DNS traffic using Wireshark. Documented findings in a lab report. Skills Tools & Platforms: Wireshark Domain: Packet analysis",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "project.contribution",
+          "fragment": "Reviewed packet captures",
+          "retained": true
+        },
+        {
+          "field": "project.outcome",
+          "fragment": "lab report",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 2,
+        "totalEvidenceFragments": 2,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 102,
+        "summaryCharacters": 120,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "Packet analysis"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.181,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITH_RESULT",
+        "projectBullets": "READABLE_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": []
+    },
+    {
+      "id": "04",
+      "scenario": "Software Engineering",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 04",
+          "headline": "Software Engineering Intern",
+          "email": "candidate-04@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Software Engineering Intern",
+          "field": "Software Engineering",
+          "opportunity": "Internship"
+        },
+        "summary": "Software Engineering candidate with project work on Campus Booking using TypeScript. Seeking Software Engineering Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Software Engineering",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Campus Booking",
+            "problem": "",
+            "built": "Built a room-booking application",
+            "technologies": "TypeScript, React",
+            "contribution": "Implemented form validation and unit tests",
+            "outcome": "Passed 12 defined acceptance tests",
+            "link": "",
+            "bullets": [
+              "Implemented form validation and unit tests using TypeScript, React. Passed 12 defined acceptance tests."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "TypeScript",
+          "aiData": "",
+          "tools": "React, Git",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 04 Software Engineering Intern Amman, Jordan · candidate-04@example.com Professional Summary Software Engineering candidate with project work on Campus Booking using TypeScript. Seeking Software Engineering Intern opportunities. Education BSc in Software Engineering Expected 2027 Synthetic University Projects Campus Booking TypeScript, React Implemented form validation and unit tests using TypeScript, React. Passed 12 defined acceptance tests. Skills Programming: TypeScript Tools & Platforms: React, Git",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "project.contribution",
+          "fragment": "Implemented form validation",
+          "retained": true
+        },
+        {
+          "field": "project.outcome",
+          "fragment": "12 defined acceptance tests",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 2,
+        "totalEvidenceFragments": 2,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 103,
+        "summaryCharacters": 135,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "Git"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.247,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITH_RESULT",
+        "projectBullets": "READABLE_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": [
+        "build-context-loss",
+        "unsupported-Git"
+      ]
+    },
+    {
+      "id": "05",
+      "scenario": "Business",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 05",
+          "headline": "Business Analyst Intern",
+          "email": "candidate-05@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Business Analyst Intern",
+          "field": "Business Administration",
+          "opportunity": "Internship"
+        },
+        "summary": "Business Administration candidate using Excel. Seeking Business Analyst Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Business Administration",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [],
+        "experience": [
+          {
+            "role": "Student Event Volunteer",
+            "organization": "Synthetic Organization",
+            "dates": "Jun 2026 - Aug 2026",
+            "details": "Coordinated the registration desk and prepared attendee lists",
+            "bullets": [
+              "Coordinated the registration desk and prepared attendee lists."
+            ]
+          }
+        ],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "Excel",
+          "domain": "",
+          "soft": "Coordination"
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 05 Business Analyst Intern Amman, Jordan · candidate-05@example.com Professional Summary Business Administration candidate using Excel. Seeking Business Analyst Intern opportunities. Education BSc in Business Administration Expected 2027 Synthetic University Experience Student Event Volunteer Jun 2026 - Aug 2026 Synthetic Organization Coordinated the registration desk and prepared attendee lists. Skills Tools & Platforms: Excel People Skills: Coordination",
+      "sectionOrder": [
+        "education",
+        "experience",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "experience.details",
+          "fragment": "Coordinated the registration desk",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 0,
+        "generatedProjectCount": 0,
+        "retainedEvidenceFragments": 1,
+        "totalEvidenceFragments": 1,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 62,
+        "summaryCharacters": 93,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [
+          "using Excel"
+        ],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "Excel",
+          "Coordination"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 2.522,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "RELATION_NEEDS_CONFIRMATION",
+        "evidenceStrength": "ACTION_WITHOUT_RESULT",
+        "projectBullets": "NOT_APPLICABLE",
+        "experienceBullets": "SOURCE_ACTION_RETAINED",
+        "professionalSummary": "NEEDS_SELECTION_OR_EVIDENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "REVIEW_SUMMARY_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": [
+        "summary-ignores-experience",
+        "skill-without-demonstration"
+      ]
+    },
+    {
+      "id": "06",
+      "scenario": "Marketing",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 06",
+          "headline": "Marketing Intern",
+          "email": "candidate-06@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Marketing Intern",
+          "field": "Marketing",
+          "opportunity": "Internship"
+        },
+        "summary": "Marketing candidate with project work on Student Campaign using Canva. Seeking Marketing Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Marketing",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Student Campaign",
+            "problem": "",
+            "built": "Created a class campaign plan",
+            "technologies": "Canva",
+            "contribution": "Designed three social posts in Canva",
+            "outcome": "Presented the plan in class",
+            "link": "",
+            "bullets": [
+              "Designed three social posts in Canva. Presented the plan in class."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "Canva",
+          "domain": "Content planning",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 06 Marketing Intern Amman, Jordan · candidate-06@example.com Professional Summary Marketing candidate with project work on Student Campaign using Canva. Seeking Marketing Intern opportunities. Education BSc in Marketing Expected 2027 Synthetic University Projects Student Campaign Canva Designed three social posts in Canva. Presented the plan in class. Skills Tools & Platforms: Canva Domain: Content planning",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "project.contribution",
+          "fragment": "Designed three social posts",
+          "retained": true
+        },
+        {
+          "field": "project.outcome",
+          "fragment": "Presented the plan in class",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 2,
+        "totalEvidenceFragments": 2,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 66,
+        "summaryCharacters": 110,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "Content planning"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.707,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITH_RESULT",
+        "projectBullets": "READABLE_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": []
+    },
+    {
+      "id": "07",
+      "scenario": "Finance; simulated work",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 07",
+          "headline": "Finance Graduate Analyst",
+          "email": "candidate-07@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Finance Graduate Analyst",
+          "field": "Finance",
+          "opportunity": "Internship"
+        },
+        "summary": "Finance candidate with project work on Valuation Class Simulation using Excel. Seeking Finance Graduate Analyst opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Finance",
+            "graduation": "Completed 2026",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Valuation Class Simulation",
+            "problem": "",
+            "built": "Built a course simulation of a company valuation",
+            "technologies": "Excel",
+            "contribution": "Compared discounted cash flow assumptions",
+            "outcome": "Submitted the model for coursework review",
+            "link": "",
+            "bullets": [
+              "Compared discounted cash flow assumptions using Excel. Submitted the model for coursework review."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "Excel",
+          "domain": "Valuation",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 07 Finance Graduate Analyst Amman, Jordan · candidate-07@example.com Professional Summary Finance candidate with project work on Valuation Class Simulation using Excel. Seeking Finance Graduate Analyst opportunities. Education BSc in Finance Completed 2026 Synthetic University Projects Valuation Class Simulation Excel Compared discounted cash flow assumptions using Excel. Submitted the model for coursework review. Skills Tools & Platforms: Excel Domain: Valuation",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "project.built",
+          "fragment": "course simulation",
+          "retained": false
+        },
+        {
+          "field": "project.contribution",
+          "fragment": "Compared discounted cash flow assumptions",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 1,
+        "totalEvidenceFragments": 2,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 97,
+        "summaryCharacters": 126,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.688,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "SUPPLIED_EVIDENCE_LOST",
+        "projectBullets": "READABLE_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "EXPLICIT_TERM_IN_EVIDENCE",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "NEEDS_CONTEXT_OR_EDIT",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": [
+        "academic-context-loss"
+      ]
+    },
+    {
+      "id": "08",
+      "scenario": "Engineering",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 08",
+          "headline": "Mechanical Engineering Intern",
+          "email": "candidate-08@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Mechanical Engineering Intern",
+          "field": "Mechanical Engineering",
+          "opportunity": "Internship"
+        },
+        "summary": "Mechanical Engineering candidate with project work on Pump Test Rig using SolidWorks. Seeking Mechanical Engineering Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Mechanical Engineering",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Pump Test Rig",
+            "problem": "",
+            "built": "Assembled a classroom pump test rig",
+            "technologies": "SolidWorks",
+            "contribution": "Recorded flow measurements and drew the assembly",
+            "outcome": "Reported measurement uncertainty",
+            "link": "",
+            "bullets": [
+              "Recorded flow measurements and drew the assembly using SolidWorks. Reported measurement uncertainty."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "SolidWorks",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 08 Mechanical Engineering Intern Amman, Jordan · candidate-08@example.com Professional Summary Mechanical Engineering candidate with project work on Pump Test Rig using SolidWorks. Seeking Mechanical Engineering Intern opportunities. Education BSc in Mechanical Engineering Expected 2027 Synthetic University Projects Pump Test Rig SolidWorks Recorded flow measurements and drew the assembly using SolidWorks. Reported measurement uncertainty. Skills Tools & Platforms: SolidWorks",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "project.contribution",
+          "fragment": "Recorded flow measurements",
+          "retained": true
+        },
+        {
+          "field": "project.outcome",
+          "fragment": "measurement uncertainty",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 2,
+        "totalEvidenceFragments": 2,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 100,
+        "summaryCharacters": 138,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.899,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITH_RESULT",
+        "projectBullets": "READABLE_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "EXPLICIT_TERM_IN_EVIDENCE",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": []
+    },
+    {
+      "id": "09",
+      "scenario": "Design",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 09",
+          "headline": "UX Design Intern",
+          "email": "candidate-09@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "UX Design Intern",
+          "field": "Design",
+          "opportunity": "Internship"
+        },
+        "summary": "Design candidate with project work on Library Prototype using Figma. Seeking UX Design Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Design",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Library Prototype",
+            "problem": "",
+            "built": "Created a library booking prototype",
+            "technologies": "Figma",
+            "contribution": "Interviewed 5 classmates and redesigned the search screen",
+            "outcome": "Tested the prototype with the same classmates",
+            "link": "",
+            "bullets": [
+              "Interviewed 5 classmates and redesigned the search screen using Figma. Tested the prototype with the same classmates."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "Figma",
+          "domain": "User research",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 09 UX Design Intern Amman, Jordan · candidate-09@example.com Professional Summary Design candidate with project work on Library Prototype using Figma. Seeking UX Design Intern opportunities. Education BSc in Design Expected 2027 Synthetic University Projects Library Prototype Figma Interviewed 5 classmates and redesigned the search screen using Figma. Tested the prototype with the same classmates. Skills Tools & Platforms: Figma Domain: User research",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "project.contribution",
+          "fragment": "Interviewed 5 classmates",
+          "retained": true
+        },
+        {
+          "field": "project.outcome",
+          "fragment": "Tested the prototype",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 2,
+        "totalEvidenceFragments": 2,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 117,
+        "summaryCharacters": 108,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "User research"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 2.425,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITH_RESULT",
+        "projectBullets": "READABLE_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": []
+    },
+    {
+      "id": "10",
+      "scenario": "Translation / languages",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 10",
+          "headline": "Translation Intern",
+          "email": "candidate-10@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Translation Intern",
+          "field": "Translation",
+          "opportunity": "Internship"
+        },
+        "summary": "Translation candidate with project work on Campus Guide Translation using Arabic-to-English translation. Seeking Translation Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BA",
+            "major": "Translation",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Campus Guide Translation",
+            "problem": "",
+            "built": "Translated a student orientation guide",
+            "technologies": "",
+            "contribution": "Revised Arabic-to-English passages against the source text",
+            "outcome": "Delivered a bilingual coursework sample",
+            "link": "",
+            "bullets": [
+              "Revised Arabic-to-English passages against the source text. Delivered a bilingual coursework sample."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "",
+          "domain": "Arabic-to-English translation",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": [
+          "Arabic: native",
+          "English: advanced"
+        ]
+      },
+      "renderedText": "Synthetic Candidate 10 Translation Intern Amman, Jordan · candidate-10@example.com Professional Summary Translation candidate with project work on Campus Guide Translation using Arabic-to-English translation. Seeking Translation Intern opportunities. Education BA in Translation Expected 2027 Synthetic University Projects Campus Guide Translation Revised Arabic-to-English passages against the source text. Delivered a bilingual coursework sample. Skills Domain: Arabic-to-English translation Languages Arabic: native English: advanced",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills",
+        "languages"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "project.contribution",
+          "fragment": "Revised Arabic-to-English passages",
+          "retained": true
+        },
+        {
+          "field": "languages",
+          "fragment": "Arabic: native",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 2,
+        "totalEvidenceFragments": 2,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 100,
+        "summaryCharacters": 146,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "Arabic-to-English translation"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 2.078,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITH_RESULT",
+        "projectBullets": "READABLE_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": []
+    },
+    {
+      "id": "11",
+      "scenario": "No employment; coursework only",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 11",
+          "headline": "Research Assistant Intern",
+          "email": "candidate-11@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Research Assistant Intern",
+          "field": "Psychology",
+          "opportunity": "Internship"
+        },
+        "summary": "Psychology candidate with project work on Course Survey using Survey design. Seeking Research Assistant Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Psychology",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Course Survey",
+            "problem": "",
+            "built": "Prepared a research-methods survey",
+            "technologies": "",
+            "contribution": "Wrote consent wording and coded anonymous responses",
+            "outcome": "Presented limitations to the class",
+            "link": "",
+            "bullets": [
+              "Wrote consent wording and coded anonymous responses. Presented limitations to the class."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "",
+          "domain": "Survey design",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 11 Research Assistant Intern Amman, Jordan · candidate-11@example.com Professional Summary Psychology candidate with project work on Course Survey using Survey design. Seeking Research Assistant Intern opportunities. Education BSc in Psychology Expected 2027 Synthetic University Projects Course Survey Wrote consent wording and coded anonymous responses. Presented limitations to the class. Skills Domain: Survey design",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "project.contribution",
+          "fragment": "Wrote consent wording",
+          "retained": true
+        },
+        {
+          "field": "project.outcome",
+          "fragment": "Presented limitations",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 2,
+        "totalEvidenceFragments": 2,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 88,
+        "summaryCharacters": 125,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "Survey design"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.44,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITH_RESULT",
+        "projectBullets": "READABLE_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": []
+    },
+    {
+      "id": "12",
+      "scenario": "Volunteering only; bare activity entry",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 12",
+          "headline": "Community Program Intern",
+          "email": "candidate-12@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Community Program Intern",
+          "field": "Sociology",
+          "opportunity": "Internship"
+        },
+        "summary": "Sociology candidate using Facilitation. Seeking Community Program Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Sociology",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [],
+        "experience": [],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "",
+          "domain": "",
+          "soft": "Facilitation"
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [
+          "Literacy Club: organized reading sessions and prepared worksheets"
+        ],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 12 Community Program Intern Amman, Jordan · candidate-12@example.com Professional Summary Sociology candidate using Facilitation. Seeking Community Program Intern opportunities. Education BSc in Sociology Expected 2027 Synthetic University Skills People Skills: Facilitation Activities & Volunteering Literacy Club: organized reading sessions and prepared worksheets",
+      "sectionOrder": [
+        "education",
+        "skills",
+        "volunteering"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one.",
+        "Add a project, activity, training, or experience that shows your work."
+      ],
+      "evidence": [
+        {
+          "field": "volunteering",
+          "fragment": "organized reading sessions",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 0,
+        "generatedProjectCount": 0,
+        "retainedEvidenceFragments": 1,
+        "totalEvidenceFragments": 1,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 0,
+        "summaryCharacters": 87,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [
+          "using Facilitation"
+        ],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "Facilitation"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.071,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "RELATION_NEEDS_CONFIRMATION",
+        "evidenceStrength": "LABELS_OR_NO_ACTION",
+        "projectBullets": "NOT_APPLICABLE",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "NEEDS_SELECTION_OR_EVIDENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "REVIEW_SUMMARY_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "ELICIT_OR_RESTRUCTURE"
+      },
+      "authorExpectedRisks": [
+        "summary-ignores-activity",
+        "reviewer-says-add-already-present-evidence"
+      ]
+    },
+    {
+      "id": "13",
+      "scenario": "Projects only; multiple projects",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 13",
+          "headline": "Web Developer Intern",
+          "email": "candidate-13@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Web Developer Intern",
+          "field": "Computer Science",
+          "opportunity": "Internship"
+        },
+        "summary": "Computer Science candidate with project work on Study Timer using JavaScript. Seeking Web Developer Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Computer Science",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Study Timer",
+            "problem": "",
+            "built": "Built a browser timer",
+            "technologies": "JavaScript",
+            "contribution": "Implemented timer state",
+            "outcome": "",
+            "link": "",
+            "bullets": [
+              "Implemented timer state using JavaScript."
+            ]
+          },
+          {
+            "name": "Club Website",
+            "problem": "",
+            "built": "Built a club website",
+            "technologies": "HTML, CSS",
+            "contribution": "Created accessible navigation",
+            "outcome": "Published a static demo",
+            "link": "",
+            "bullets": [
+              "Created accessible navigation using HTML, CSS. Published a static demo."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "JavaScript, HTML, CSS",
+          "aiData": "",
+          "tools": "",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 13 Web Developer Intern Amman, Jordan · candidate-13@example.com Professional Summary Computer Science candidate with project work on Study Timer using JavaScript. Seeking Web Developer Intern opportunities. Education BSc in Computer Science Expected 2027 Synthetic University Projects Study Timer JavaScript Implemented timer state using JavaScript. Club Website HTML, CSS Created accessible navigation using HTML, CSS. Published a static demo. Skills Programming: JavaScript, HTML, CSS",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one.",
+        "Study Timer: add a result if you can verify one; a metric is optional."
+      ],
+      "evidence": [
+        {
+          "field": "project[0].contribution",
+          "fragment": "Implemented timer state",
+          "retained": true
+        },
+        {
+          "field": "project[1].contribution",
+          "fragment": "Created accessible navigation",
+          "retained": true
+        },
+        {
+          "field": "project[1].outcome",
+          "fragment": "Published a static demo",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 2,
+        "generatedProjectCount": 2,
+        "retainedEvidenceFragments": 3,
+        "totalEvidenceFragments": 3,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 71,
+        "summaryCharacters": 121,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.938,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITH_RESULT",
+        "projectBullets": "READABLE_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "EXPLICIT_TERM_IN_EVIDENCE",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": []
+    },
+    {
+      "id": "14",
+      "scenario": "Competitions / hackathons",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 14",
+          "headline": "Software Engineering Intern",
+          "email": "candidate-14@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Software Engineering Intern",
+          "field": "Computer Science",
+          "opportunity": "Internship"
+        },
+        "summary": "Computer Science candidate with project work on Hackathon Map using JavaScript. Seeking Software Engineering Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Computer Science",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Hackathon Map",
+            "problem": "",
+            "built": "Built a hackathon prototype",
+            "technologies": "JavaScript",
+            "contribution": "Implemented the map view in a team of 4",
+            "outcome": "Presented a working prototype",
+            "link": "",
+            "bullets": [
+              "Implemented the map view in a team of 4 using JavaScript. Presented a working prototype."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "JavaScript",
+          "aiData": "",
+          "tools": "",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [
+          "Campus Hackathon finalist, 2026"
+        ],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 14 Software Engineering Intern Amman, Jordan · candidate-14@example.com Professional Summary Computer Science candidate with project work on Hackathon Map using JavaScript. Seeking Software Engineering Intern opportunities. Education BSc in Computer Science Expected 2027 Synthetic University Projects Hackathon Map JavaScript Implemented the map view in a team of 4 using JavaScript. Presented a working prototype. Skills Programming: JavaScript Awards Campus Hackathon finalist, 2026",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills",
+        "awards"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "project.contribution",
+          "fragment": "team of 4",
+          "retained": true
+        },
+        {
+          "field": "awards",
+          "fragment": "Campus Hackathon finalist",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 2,
+        "totalEvidenceFragments": 2,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 88,
+        "summaryCharacters": 130,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.417,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITH_RESULT",
+        "projectBullets": "READABLE_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "EXPLICIT_TERM_IN_EVIDENCE",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": []
+    },
+    {
+      "id": "15",
+      "scenario": "Training but weak projects",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 15",
+          "headline": "Data Intern",
+          "email": "candidate-15@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Data Intern",
+          "field": "Mathematics",
+          "opportunity": "Internship"
+        },
+        "summary": "Mathematics candidate with project work on Practice using Python. Seeking Data Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Mathematics",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Practice",
+            "problem": "",
+            "built": "",
+            "technologies": "",
+            "contribution": "",
+            "outcome": "",
+            "link": "",
+            "bullets": []
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "Python",
+          "aiData": "",
+          "tools": "",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [
+          "Introductory Python course, Synthetic Training Center, 2026"
+        ],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 15 Data Intern Amman, Jordan · candidate-15@example.com Professional Summary Mathematics candidate with project work on Practice using Python. Seeking Data Intern opportunities. Education BSc in Mathematics Expected 2027 Synthetic University Projects Practice Skills Programming: Python Training Introductory Python course, Synthetic Training Center, 2026",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills",
+        "training"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one.",
+        "Practice: clarify what you personally contributed.",
+        "Practice: add a result if you can verify one; a metric is optional.",
+        "Python is listed as a skill but is not shown in a project or experience bullet."
+      ],
+      "evidence": [
+        {
+          "field": "training",
+          "fragment": "Introductory Python course",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 1,
+        "totalEvidenceFragments": 1,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 0,
+        "summaryCharacters": 100,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [
+          "with project work on Practice",
+          "using Python"
+        ],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 1,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "Python"
+        ],
+        "exactSkillWarnings": [
+          "Python"
+        ],
+        "localGenerationAndRenderMs": 4.035,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "RELATION_NEEDS_CONFIRMATION",
+        "evidenceStrength": "LABELS_OR_NO_ACTION",
+        "projectBullets": "NO_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "NEEDS_SELECTION_OR_EVIDENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "REVIEW_SUMMARY_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "NEEDS_CONTEXT_OR_EDIT",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "ELICIT_OR_RESTRUCTURE"
+      },
+      "authorExpectedRisks": [
+        "name-only-project-work-claim",
+        "skill-without-demonstration"
+      ]
+    },
+    {
+      "id": "16",
+      "scenario": "Sparse candidate",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 16",
+          "headline": "Graduate Trainee",
+          "email": "candidate-16@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Graduate Trainee",
+          "field": "General Studies",
+          "opportunity": "Internship"
+        },
+        "summary": "General Studies candidate. Seeking Graduate Trainee opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "General Studies",
+            "graduation": "",
+            "gpa": ""
+          }
+        ],
+        "projects": [],
+        "experience": [],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 16 Graduate Trainee Amman, Jordan · candidate-16@example.com Professional Summary General Studies candidate. Seeking Graduate Trainee opportunities. Education BSc in General Studies Synthetic University",
+      "sectionOrder": [
+        "education"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one.",
+        "Add a project, activity, training, or experience that shows your work."
+      ],
+      "evidence": [],
+      "measurements": {
+        "sourceProjectCount": 0,
+        "generatedProjectCount": 0,
+        "retainedEvidenceFragments": 0,
+        "totalEvidenceFragments": 0,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 0,
+        "summaryCharacters": 66,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.149,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "LABELS_OR_NO_ACTION",
+        "projectBullets": "NOT_APPLICABLE",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "NEEDS_SELECTION_OR_EVIDENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "EXPLICIT_TERM_IN_EVIDENCE",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "ELICIT_OR_RESTRUCTURE"
+      },
+      "authorExpectedRisks": [
+        "generic-summary",
+        "missing-graduation-date"
+      ]
+    },
+    {
+      "id": "17",
+      "scenario": "Very strong candidate",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 17",
+          "headline": "Data Analyst",
+          "email": "candidate-17@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Data Analyst",
+          "field": "Statistics",
+          "opportunity": "Internship"
+        },
+        "summary": "Statistics candidate with project work on Transit Dashboard using Python. Seeking Data Analyst opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Statistics",
+            "graduation": "Completed 2026",
+            "gpa": "3.7/4"
+          }
+        ],
+        "projects": [
+          {
+            "name": "Transit Dashboard",
+            "problem": "",
+            "built": "Built a transit dashboard",
+            "technologies": "Python, Tableau",
+            "contribution": "Cleaned 1200 open-data records in Python",
+            "outcome": "Presented route-delay findings",
+            "link": "",
+            "bullets": [
+              "Cleaned 1200 open-data records in Python using Python, Tableau. Presented route-delay findings."
+            ]
+          },
+          {
+            "name": "Survey Analysis",
+            "problem": "",
+            "built": "Analyzed course survey data",
+            "technologies": "R",
+            "contribution": "Compared response groups",
+            "outcome": "Documented confidence intervals",
+            "link": "",
+            "bullets": [
+              "Compared response groups. Documented confidence intervals."
+            ]
+          },
+          {
+            "name": "Data Quality Checks",
+            "problem": "",
+            "built": "Created validation tests",
+            "technologies": "SQL",
+            "contribution": "Wrote checks for missing records",
+            "outcome": "Identified 15 duplicate records",
+            "link": "",
+            "bullets": [
+              "Wrote checks for missing records using SQL. Identified 15 duplicate records."
+            ]
+          }
+        ],
+        "experience": [
+          {
+            "role": "Data Intern",
+            "organization": "Synthetic Organization",
+            "dates": "Jun 2026 - Aug 2026",
+            "details": "Cleaned monthly datasets in Python and documented validation rules",
+            "bullets": [
+              "Cleaned monthly datasets in Python and documented validation rules."
+            ]
+          },
+          {
+            "role": "Research Assistant",
+            "organization": "Synthetic Organization",
+            "dates": "Sep 2025 - May 2026",
+            "details": "Prepared R plots for a research poster",
+            "bullets": [
+              "Prepared R plots for a research poster."
+            ]
+          }
+        ],
+        "skills": {
+          "programming": "Python, R, SQL",
+          "aiData": "",
+          "tools": "Tableau",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [
+          "Data Analysis Certificate, Synthetic Training Center, 2026"
+        ],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 17 Data Analyst Amman, Jordan · candidate-17@example.com Professional Summary Statistics candidate with project work on Transit Dashboard using Python. Seeking Data Analyst opportunities. Experience Data Intern Jun 2026 - Aug 2026 Synthetic Organization Cleaned monthly datasets in Python and documented validation rules. Research Assistant Sep 2025 - May 2026 Synthetic Organization Prepared R plots for a research poster. Education BSc in Statistics Completed 2026 Synthetic University · GPA 3.7/4 Projects Transit Dashboard Python, Tableau Cleaned 1200 open-data records in Python using Python, Tableau. Presented route-delay findings. Survey Analysis R Compared response groups. Documented confidence intervals. Data Quality Checks SQL Wrote checks for missing records using SQL. Identified 15 duplicate records. Skills Programming: Python, R, SQL Tools & Platforms: Tableau Certifications Data Analysis Certificate, Synthetic Training Center, 2026",
+      "sectionOrder": [
+        "experience",
+        "education",
+        "projects",
+        "skills",
+        "certifications"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "project[0].outcome",
+          "fragment": "route-delay findings",
+          "retained": true
+        },
+        {
+          "field": "project[1].outcome",
+          "fragment": "confidence intervals",
+          "retained": true
+        },
+        {
+          "field": "project[2].outcome",
+          "fragment": "15 duplicate records",
+          "retained": true
+        },
+        {
+          "field": "experience[0].details",
+          "fragment": "documented validation rules",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 3,
+        "generatedProjectCount": 3,
+        "retainedEvidenceFragments": 4,
+        "totalEvidenceFragments": 4,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 95,
+        "summaryCharacters": 109,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 1,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 2.616,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITH_RESULT",
+        "projectBullets": "NEEDS_EDIT",
+        "experienceBullets": "SOURCE_ACTION_RETAINED",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "EXPLICIT_TERM_IN_EVIDENCE",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": []
+    },
+    {
+      "id": "18",
+      "scenario": "Contradictory profile",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 18",
+          "headline": "Engineering Graduate Trainee",
+          "email": "candidate-18@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Engineering Graduate Trainee",
+          "field": "Electrical Engineering",
+          "opportunity": "Internship"
+        },
+        "summary": "Electrical Engineering candidate using Multimeter. Seeking Engineering Graduate Trainee opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Electrical Engineering",
+            "graduation": "Expected 2024 / completed 2028",
+            "gpa": ""
+          }
+        ],
+        "projects": [],
+        "experience": [
+          {
+            "role": "Lab Assistant",
+            "organization": "Synthetic Organization",
+            "dates": "Aug 2026 - Jun 2025",
+            "details": "Recorded circuit measurements",
+            "bullets": [
+              "Recorded circuit measurements."
+            ]
+          }
+        ],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "Multimeter",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 18 Engineering Graduate Trainee Amman, Jordan · candidate-18@example.com Professional Summary Electrical Engineering candidate using Multimeter. Seeking Engineering Graduate Trainee opportunities. Education BSc in Electrical Engineering Expected 2024 / completed 2028 Synthetic University Experience Lab Assistant Aug 2026 - Jun 2025 Synthetic Organization Recorded circuit measurements. Skills Tools & Platforms: Multimeter",
+      "sectionOrder": [
+        "education",
+        "experience",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "education.graduation",
+          "fragment": "Expected 2024 / completed 2028",
+          "retained": true
+        },
+        {
+          "field": "experience.dates",
+          "fragment": "Aug 2026 - Jun 2025",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 0,
+        "generatedProjectCount": 0,
+        "retainedEvidenceFragments": 2,
+        "totalEvidenceFragments": 2,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 30,
+        "summaryCharacters": 102,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [
+          "using Multimeter"
+        ],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "Multimeter"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.041,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_CONTRADICTION",
+        "evidenceStrength": "ACTION_WITHOUT_RESULT",
+        "projectBullets": "NOT_APPLICABLE",
+        "experienceBullets": "SOURCE_ACTION_RETAINED",
+        "professionalSummary": "NEEDS_SELECTION_OR_EVIDENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "REVIEW_SUMMARY_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "RESOLVE_CONTRADICTION"
+      },
+      "authorExpectedRisks": [
+        "contradictory-dates-not-flagged",
+        "unsupported-tool-use"
+      ]
+    },
+    {
+      "id": "19",
+      "scenario": "Arabic personal name; English CV",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "ليلى أحمد",
+          "headline": "Software Engineering Intern",
+          "email": "candidate-19@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Software Engineering Intern",
+          "field": "Computer Science",
+          "opportunity": "Internship"
+        },
+        "summary": "Computer Science candidate with project work on Study Planner using React. Seeking Software Engineering Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Computer Science",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Study Planner",
+            "problem": "",
+            "built": "Built a study planner",
+            "technologies": "React",
+            "contribution": "Created the calendar component",
+            "outcome": "Shared a demo with classmates",
+            "link": "",
+            "bullets": [
+              "Created the calendar component using React. Shared a demo with classmates."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "React",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "ليلى أحمد Software Engineering Intern Amman, Jordan · candidate-19@example.com Professional Summary Computer Science candidate with project work on Study Planner using React. Seeking Software Engineering Intern opportunities. Education BSc in Computer Science Expected 2027 Synthetic University Projects Study Planner React Created the calendar component using React. Shared a demo with classmates. Skills Tools & Platforms: React",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one."
+      ],
+      "evidence": [
+        {
+          "field": "identity",
+          "fragment": "ليلى أحمد",
+          "retained": true
+        },
+        {
+          "field": "project.contribution",
+          "fragment": "Created the calendar component",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 2,
+        "totalEvidenceFragments": 2,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 74,
+        "summaryCharacters": 125,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 4.437,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITH_RESULT",
+        "projectBullets": "READABLE_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "EXPLICIT_TERM_IN_EVIDENCE",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": []
+    },
+    {
+      "id": "20",
+      "scenario": "Career-switching graduate; later project more relevant",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 20",
+          "headline": "Data Analyst",
+          "email": "candidate-20@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Data Analyst",
+          "field": "History",
+          "opportunity": "Internship"
+        },
+        "summary": "History candidate with project work on Archive Guide using Python. Seeking Data Analyst opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BA",
+            "major": "History",
+            "graduation": "Completed 2024",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Archive Guide",
+            "problem": "",
+            "built": "Created a history archive guide",
+            "technologies": "",
+            "contribution": "Cataloged newspaper references",
+            "outcome": "",
+            "link": "",
+            "bullets": [
+              "Cataloged newspaper references."
+            ]
+          },
+          {
+            "name": "Sales Dashboard",
+            "problem": "",
+            "built": "Built a public-data sales dashboard",
+            "technologies": "Python",
+            "contribution": "Cleaned CSV files in Python",
+            "outcome": "Published a reproducible notebook",
+            "link": "",
+            "bullets": [
+              "Cleaned CSV files in Python. Published a reproducible notebook."
+            ]
+          }
+        ],
+        "experience": [
+          {
+            "role": "Retail Assistant",
+            "organization": "Synthetic Organization",
+            "dates": "2024 - 2026",
+            "details": "Maintained inventory records",
+            "bullets": [
+              "Maintained inventory records."
+            ]
+          }
+        ],
+        "skills": {
+          "programming": "Python",
+          "aiData": "",
+          "tools": "Excel",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 20 Data Analyst Amman, Jordan · candidate-20@example.com Professional Summary History candidate with project work on Archive Guide using Python. Seeking Data Analyst opportunities. Experience Retail Assistant 2024 - 2026 Synthetic Organization Maintained inventory records. Education BA in History Completed 2024 Synthetic University Projects Archive Guide Cataloged newspaper references. Sales Dashboard Python Cleaned CSV files in Python. Published a reproducible notebook. Skills Programming: Python Tools & Platforms: Excel",
+      "sectionOrder": [
+        "experience",
+        "education",
+        "projects",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one.",
+        "Archive Guide: add a result if you can verify one; a metric is optional."
+      ],
+      "evidence": [
+        {
+          "field": "project[1].contribution",
+          "fragment": "Cleaned CSV files in Python",
+          "retained": true
+        },
+        {
+          "field": "project[1].outcome",
+          "fragment": "Published a reproducible notebook",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 2,
+        "generatedProjectCount": 2,
+        "retainedEvidenceFragments": 2,
+        "totalEvidenceFragments": 2,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 63,
+        "summaryCharacters": 102,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": true,
+        "notExplicitlyNamedSkills": [
+          "Excel"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.841,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITH_RESULT",
+        "projectBullets": "READABLE_ACTION",
+        "experienceBullets": "SOURCE_ACTION_RETAINED",
+        "professionalSummary": "NEEDS_SELECTION_OR_EVIDENCE",
+        "sectionOrdering": "REVIEW_RELEVANCE",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "ELICIT_OR_RESTRUCTURE"
+      },
+      "authorExpectedRisks": [
+        "summary-prefers-irrelevant-first-project",
+        "irrelevant-experience-leads"
+      ]
+    },
+    {
+      "id": "21",
+      "scenario": "Unsupported R skill; substring false assurance",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 21",
+          "headline": "Data Intern",
+          "email": "candidate-21@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Data Intern",
+          "field": "Mathematics",
+          "opportunity": "Internship"
+        },
+        "summary": "Mathematics candidate with project work on Inventory List using Excel. Seeking Data Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Mathematics",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Inventory List",
+            "problem": "",
+            "built": "Created an inventory list",
+            "technologies": "Excel",
+            "contribution": "Recorded stock categories",
+            "outcome": "",
+            "link": "",
+            "bullets": [
+              "Recorded stock categories using Excel."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "R",
+          "aiData": "",
+          "tools": "Excel",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 21 Data Intern Amman, Jordan · candidate-21@example.com Professional Summary Mathematics candidate with project work on Inventory List using Excel. Seeking Data Intern opportunities. Education BSc in Mathematics Expected 2027 Synthetic University Projects Inventory List Excel Recorded stock categories using Excel. Skills Programming: R Tools & Platforms: Excel",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one.",
+        "Inventory List: add a result if you can verify one; a metric is optional."
+      ],
+      "evidence": [
+        {
+          "field": "project.contribution",
+          "fragment": "Recorded stock categories",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 1,
+        "totalEvidenceFragments": 1,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 38,
+        "summaryCharacters": 105,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "R"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.592,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITHOUT_RESULT",
+        "projectBullets": "READABLE_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": [
+        "unsupported-R-not-flagged"
+      ]
+    },
+    {
+      "id": "22",
+      "scenario": "Duplicated skills and repeated tools",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 22",
+          "headline": "Software Intern",
+          "email": "candidate-22@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Software Intern",
+          "field": "Computer Science",
+          "opportunity": "Internship"
+        },
+        "summary": "Computer Science candidate with project work on Class Classifier using Python. Seeking Software Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Computer Science",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Class Classifier",
+            "problem": "",
+            "built": "Built a Python classifier",
+            "technologies": "Python, scikit-learn",
+            "contribution": "Built a Python classifier",
+            "outcome": "",
+            "link": "",
+            "bullets": [
+              "Built a Python classifier using Python, scikit-learn."
+            ]
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "Python, Python",
+          "aiData": "",
+          "tools": "Python, Git",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 22 Software Intern Amman, Jordan · candidate-22@example.com Professional Summary Computer Science candidate with project work on Class Classifier using Python. Seeking Software Intern opportunities. Education BSc in Computer Science Expected 2027 Synthetic University Projects Class Classifier Python, scikit-learn Built a Python classifier using Python, scikit-learn. Skills Programming: Python, Python Tools & Platforms: Python, Git",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one.",
+        "Class Classifier: add a result if you can verify one; a metric is optional."
+      ],
+      "evidence": [
+        {
+          "field": "project.contribution",
+          "fragment": "Built a Python classifier",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 1,
+        "totalEvidenceFragments": 1,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 53,
+        "summaryCharacters": 117,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 2,
+        "toolRepetitionBulletCount": 1,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "Git"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.076,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITHOUT_RESULT",
+        "projectBullets": "NEEDS_EDIT",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "READABLE",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "POLISH"
+      },
+      "authorExpectedRisks": [
+        "duplicate-skills",
+        "tool-repetition"
+      ]
+    },
+    {
+      "id": "23",
+      "scenario": "Long first-person project narrative and passive experience",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 23",
+          "headline": "Marketing Intern",
+          "email": "candidate-23@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "Marketing Intern",
+          "field": "Marketing",
+          "opportunity": "Internship"
+        },
+        "summary": "Marketing candidate with project work on Campaign Narrative using Canva. Seeking Marketing Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Marketing",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Campaign Narrative",
+            "problem": "",
+            "built": "Created a class marketing plan",
+            "technologies": "Canva",
+            "contribution": "I was responsible for helping the team prepare the plan and I worked on the presentation slides, and I think the work was really useful because we had a long discussion about the class brief and everyone shared ideas and I also helped the group decide what should be included in each slide before the final presentation.",
+            "outcome": "",
+            "link": "",
+            "bullets": [
+              "I was responsible for helping the team prepare the plan and I worked on the presentation slides, and I think the work was really useful because we had a long discussion about the class brief and everyone shared ideas and I also helped the group decide what should be included in each slide before the final presentation using Canva."
+            ]
+          }
+        ],
+        "experience": [
+          {
+            "role": "Club Member",
+            "organization": "Synthetic Organization",
+            "dates": "Jun 2026 - Aug 2026",
+            "details": "Responsible for helping with events",
+            "bullets": [
+              "Responsible for helping with events."
+            ]
+          }
+        ],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "",
+          "domain": "",
+          "soft": "Hard working, Communication"
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 23 Marketing Intern Amman, Jordan · candidate-23@example.com Professional Summary Marketing candidate with project work on Campaign Narrative using Canva. Seeking Marketing Intern opportunities. Education BSc in Marketing Expected 2027 Synthetic University Projects Campaign Narrative Canva I was responsible for helping the team prepare the plan and I worked on the presentation slides, and I think the work was really useful because we had a long discussion about the class brief and everyone shared ideas and I also helped the group decide what should be included in each slide before the final presentation using Canva. Experience Club Member Jun 2026 - Aug 2026 Synthetic Organization Responsible for helping with events. Skills People Skills: Hard working, Communication",
+      "sectionOrder": [
+        "education",
+        "projects",
+        "experience",
+        "skills"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one.",
+        "Campaign Narrative: add a result if you can verify one; a metric is optional.",
+        "Shorten long bullets for easier scanning."
+      ],
+      "evidence": [
+        {
+          "field": "project.contribution",
+          "fragment": "presentation slides",
+          "retained": true
+        },
+        {
+          "field": "experience.details",
+          "fragment": "Responsible for helping with events",
+          "retained": true
+        }
+      ],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 2,
+        "totalEvidenceFragments": 2,
+        "longBulletCount": 1,
+        "maxBulletCharacters": 332,
+        "summaryCharacters": 112,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 1,
+        "firstPersonBulletCount": 1,
+        "unnecessaryBuzzwordPresent": true,
+        "namedProjectWithoutAction": 0,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [
+          "Hard working",
+          "Communication"
+        ],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 1.11,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "SOURCE_ALIGNED",
+        "evidenceStrength": "ACTION_WITHOUT_RESULT",
+        "projectBullets": "NEEDS_EDIT",
+        "experienceBullets": "PASSIVE_UNCHANGED",
+        "professionalSummary": "CONCISE_SOURCE_REFERENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "REVIEW_CONTEXT",
+        "unsupportedClaims": "NO_NEW_NUMBER_OR_LABELED_RELATION",
+        "buzzwords": "REMOVE_OR_DEMONSTRATE",
+        "clarity": "NEEDS_CONTEXT_OR_EDIT",
+        "concision": "SHORTEN",
+        "humanReviewUsefulness": "ELICIT_OR_RESTRUCTURE"
+      },
+      "authorExpectedRisks": [
+        "long-bullet",
+        "first-person-prose",
+        "passive-experience",
+        "unnecessary-buzzword"
+      ]
+    },
+    {
+      "id": "24",
+      "scenario": "Named project without work; no employment",
+      "sourceSchemaValid": true,
+      "generatedSchemaValid": true,
+      "generatedProfile": {
+        "personal": {
+          "fullName": "Synthetic Candidate 24",
+          "headline": "AI Intern",
+          "email": "candidate-24@example.com",
+          "phone": "",
+          "location": "Amman, Jordan",
+          "linkedin": "",
+          "portfolio": ""
+        },
+        "careerGoal": {
+          "role": "AI Intern",
+          "field": "Computer Science",
+          "opportunity": "Internship"
+        },
+        "summary": "Computer Science candidate with project work on Future AI Assistant. Seeking AI Intern opportunities.",
+        "education": [
+          {
+            "institution": "Synthetic University",
+            "degree": "BSc",
+            "major": "Computer Science",
+            "graduation": "Expected 2027",
+            "gpa": ""
+          }
+        ],
+        "projects": [
+          {
+            "name": "Future AI Assistant",
+            "problem": "",
+            "built": "",
+            "technologies": "",
+            "contribution": "",
+            "outcome": "",
+            "link": "",
+            "bullets": []
+          }
+        ],
+        "experience": [],
+        "skills": {
+          "programming": "",
+          "aiData": "",
+          "tools": "",
+          "domain": "",
+          "soft": ""
+        },
+        "certifications": [],
+        "training": [],
+        "volunteering": [],
+        "awards": [],
+        "languages": []
+      },
+      "renderedText": "Synthetic Candidate 24 AI Intern Amman, Jordan · candidate-24@example.com Professional Summary Computer Science candidate with project work on Future AI Assistant. Seeking AI Intern opportunities. Education BSc in Computer Science Expected 2027 Synthetic University Projects Future AI Assistant",
+      "sectionOrder": [
+        "education",
+        "projects"
+      ],
+      "readinessChecks": [
+        "Add a LinkedIn or portfolio link if you have one.",
+        "Future AI Assistant: clarify what you personally contributed.",
+        "Future AI Assistant: add a result if you can verify one; a metric is optional."
+      ],
+      "evidence": [],
+      "measurements": {
+        "sourceProjectCount": 1,
+        "generatedProjectCount": 1,
+        "retainedEvidenceFragments": 0,
+        "totalEvidenceFragments": 0,
+        "longBulletCount": 0,
+        "maxBulletCharacters": 0,
+        "summaryCharacters": 101,
+        "newNumericTokens": false,
+        "summaryRelationsNeedingEvidence": [
+          "with project work on Future AI Assistant"
+        ],
+        "duplicateSkillOccurrences": 0,
+        "toolRepetitionBulletCount": 0,
+        "passiveExperienceBulletCount": 0,
+        "firstPersonBulletCount": 0,
+        "unnecessaryBuzzwordPresent": false,
+        "namedProjectWithoutAction": 1,
+        "preferredLeadMismatch": false,
+        "notExplicitlyNamedSkills": [],
+        "exactSkillWarnings": [],
+        "localGenerationAndRenderMs": 0.718,
+        "llmCalls": 0
+      },
+      "rubric": {
+        "factuality": "RELATION_NEEDS_CONFIRMATION",
+        "evidenceStrength": "LABELS_OR_NO_ACTION",
+        "projectBullets": "NO_ACTION",
+        "experienceBullets": "NOT_APPLICABLE",
+        "professionalSummary": "NEEDS_SELECTION_OR_EVIDENCE",
+        "sectionOrdering": "ACCEPTABLE_DEFAULT",
+        "skillRelevance": "EXPLICIT_TERM_IN_EVIDENCE",
+        "unsupportedClaims": "REVIEW_SUMMARY_RELATION",
+        "buzzwords": "NONE_DETECTED",
+        "clarity": "NEEDS_CONTEXT_OR_EDIT",
+        "concision": "WITHIN_LOCAL_THRESHOLDS",
+        "humanReviewUsefulness": "ELICIT_OR_RESTRUCTURE"
+      },
+      "authorExpectedRisks": [
+        "name-only-project-work-claim"
+      ]
+    }
+  ]
+}

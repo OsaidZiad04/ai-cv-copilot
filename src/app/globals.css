@@ -1420,3 +1420,28 @@ button:disabled {
   }
 
 }
+.wording-review { margin: 18px 0; padding: 16px; border: 1px solid #bd9257; background: #faf7ef; border-radius: 8px; overflow-wrap: anywhere; }
+.wording-review > p { margin: 8px 0; }
+.wording-review summary { cursor: pointer; margin: 12px 0; }
+.wording-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.wording-comparison ul { padding-left: 20px; }
+.wording-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
+.rewrite-proposal { border-top: 1px solid #bd9257; padding-top: 14px; }
+@media (max-width: 600px) { .wording-comparison { grid-template-columns: 1fr; } }
+
+/* Experimental evidence and mentor controls remain outside the printed CV. */
+.evidence-question,.evidence-followup { margin:16px 0 0; padding:14px; border-left:3px solid #005faf; background:#f3f7fc; color:#16262b }
+.evidence-followup textarea { margin-top:8px }
+.evidence-followup small { display:block; margin-top:8px }
+.review-panel h3 { font-size:16px; margin:20px 0 12px }
+.review-example { border-top:1px solid #d8e2e8; padding-top:8px }
+.review-example select { width:100%; min-height:44px; padding:10px; border:1px solid #c7d6df; border-radius:8px; background:white; color:#16262b; font:inherit }
+.review-source { white-space:pre-wrap; overflow-wrap:anywhere; background:#f3f7fc; padding:12px; border-radius:8px }
+.review-tasks { padding-left:22px; margin:12px 0 }
+.review-task { margin-bottom:16px; padding:10px 4px; border-bottom:1px solid #d8e2e8; overflow-wrap:anywhere }
+.review-task p { margin:8px 0; font-size:14px }
+.review-task summary,.review-more summary { cursor:pointer; padding:8px 0; font-size:14px; font-weight:600 }
+.review-task .text-button { display:block; margin-top:10px; text-align:left; white-space:normal }
+.target-role small { display:block; margin:8px 0 }
+.review-panel :focus-visible,.editor-stack :focus-visible { outline:3px solid #005faf; outline-offset:4px }
+@media (min-width:1200px) { .review-layout { grid-template-columns:minmax(320px,380px) minmax(0,1fr); gap:36px } }
