@@ -1,0 +1,66 @@
+[
+  {
+    "case": "business",
+    "pages": 1,
+    "a4": true,
+    "missing": [],
+    "outside_margin": [],
+    "bytes": 20151
+  },
+  {
+    "case": "contribution",
+    "pages": 1,
+    "a4": true,
+    "missing": [],
+    "outside_margin": [],
+    "bytes": 14259
+  },
+  {
+    "case": "long",
+    "pages": 2,
+    "a4": true,
+    "missing": [],
+    "outside_margin": [],
+    "bytes": 22354
+  },
+  {
+    "case": "noWork",
+    "pages": 1,
+    "a4": true,
+    "missing": [],
+    "outside_margin": [],
+    "bytes": 20976
+  },
+  {
+    "case": "sparse",
+    "pages": 1,
+    "a4": true,
+    "missing": [],
+    "outside_margin": [],
+    "bytes": 12193
+  },
+  {
+    "case": "technical",
+    "pages": 1,
+    "a4": true,
+    "missing": [],
+    "outside_margin": [],
+    "bytes": 20976
+  },
+  {
+    "case": "unicode",
+    "pages": 1,
+    "a4": true,
+    "missing": [],
+    "outside_margin": [],
+    "bytes": 25655
+  },
+  {
+    "case": "urls",
+    "pages": 2,
+    "a4": true,
+    "missing": [],
+    "outside_margin": [],
+    "bytes": 22801
+  }
+]

@@ -1,0 +1,29 @@
+محمد أحمد — Zoë Álvarez
+Junior AI Engineer
+Amman, Jordan · +962 79 000 0000 · lina.demo@example.com
+linkedin.com/in/lina-demo
+github.com/lina-demo
+Professional Summary
+Computer science graduate with hands-on experience building a document question-answering prototype using
+Python, FastAPI and vector search. Seeking a junior AI engineering role.
+Education
+BSc in Computer Science
+2026
+University of Jordan
+Projects
+Research Paper Assistant
+github.com/lina-demo/research-assistant
+Python, FastAPI, vector search
+• Implemented document ingestion and API endpoints for a course-paper question-answering prototype using
+Python, FastAPI and vector search.
+Skills
+Programming: Python, TypeScript
+AI & Data: Vector search, data preprocessing
+Tools & Platforms: FastAPI, Git
+Training
+• Machine Learning Summer School, 2025
+Activities & Volunteering
+• IEEE student branch event volunteer
+Languages
+• Arabic (native)
+• English (professional)

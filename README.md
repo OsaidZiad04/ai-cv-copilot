@@ -2,7 +2,7 @@
 
 Build a professional first CV through a short guided conversation, with optional AI help and a reliable no-key fallback.
 
-**Status:** `v1.0.0-rc.1` event release candidate. The repository has passed local and live Groq checks; production deployment and event-device validation are still pending.
+**Status:** stable production `v1.0.1`. This `feature/email-cv-delivery` branch is an isolated email-delivery experiment; it has not been merged or promoted to production.
 
 ## Features
 
@@ -12,6 +12,7 @@ Build a professional first CV through a short guided conversation, with optional
 - Mock and deterministic Guided modes that work without a paid service or API key.
 - CV Readiness Check with factual guidance, plus A4 browser Print / Save PDF.
 - Two synthetic operator demos available only at `/?demo=1`.
+- On this experimental branch only: optional Email My CV, disabled by default. See [Email delivery setup and privacy](docs/EMAIL-CV-DELIVERY.md) and the [experiment report](experiments/email-cv-delivery/REPORT.md).
 
 ## Product flow
 
@@ -90,7 +91,7 @@ Deploy `main` and test the resulting HTTPS URL before sharing a QR code. Emergen
 
 ## Privacy
 
-Candidate information stays in this browser tab's `sessionStorage` until session reset or tab-session end. On AI operations, selected professional evidence may be sent through this app's API routes to the configured provider. Full name and contact fields are excluded from Groq payloads; recognizable contact-like text in professional free text is filtered. The server does not intentionally save or log CV content. Students should review generated wording before sharing. A saved PDF and browser print history are outside the app's session-clearing control.
+Candidate information stays in this browser tab's `sessionStorage` until session reset or tab-session end. On AI operations, selected professional evidence may be sent through this app's API routes to the configured provider. Full name and contact fields are excluded from Groq payloads; recognizable contact-like text in professional free text is filtered. If email delivery is enabled and explicitly selected, the full profile is temporarily processed server-side and the email address and generated PDF are sent to Brevo for delivery. The server does not intentionally save or log CV content. Students should review generated wording before sharing. Saved PDFs, print history, provider records and delivered email copies are outside the app's session-clearing control.
 
 ## Event usage and documentation
 

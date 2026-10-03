@@ -8,9 +8,10 @@
     "start": "next start",
     "lint": "node scripts/lint.mjs",
     "typecheck": "tsc --noEmit",
-    "test": "node --test tests/product.test.mjs"
+    "test": "node --test tests/product.test.mjs tests/email.test.mjs"
   },
   "dependencies": {
+    "@react-pdf/renderer": "4.9.0",
     "next": "16.2.9",
     "react": "19.2.7",
     "react-dom": "19.2.7",
