@@ -89,7 +89,17 @@ Set `CV_EMAIL_SEND_ENABLED=false` and redeploy/restart only the intended environ
 
 ## Preview deployment
 
-Branch push/deployment status is recorded below after publishing this isolated branch. Email Preview secrets will not be copied automatically; branch-scoped manual steps are documented. No Preview promotion is authorized.
+Implementation commit: `a71291e36c4ed998bf6e7c2ebe8558fa150cd540`, pushed only to `origin/feature/email-cv-delivery`. Vercel deployment `3uqSTWzGz7NZ4yNEvq3m2dx4GwRx` is **Ready**, environment **Preview**, source branch/commit verified in its deployment overview. Build duration: 23 seconds.
+
+Immutable tested Preview: https://ai-cv-copilot-jl8ib0rfi-osaidziad84-4441.vercel.app/
+
+Branch alias: https://ai-cv-copilot-git-feature-email-cv-delivery-osaidziad84-4441.vercel.app/
+
+Authenticated browser smoke passed landing/demo, business CV preview, Review Mode, reset and refresh back to landing. Email action is absent on Preview, as intended with configuration disabled/unset. Screenshot: [`qa/preview-review.jpg`](qa/preview-review.jpg).
+
+Preview email credentials were not copied automatically. Configure them securely for **Preview + this branch only** using the exact manual steps in the operator document, then redeploy and repeat the synthetic send. The received-email test so far was local, not on Preview. CLI endpoint checks redirected to Vercel authentication, and the in-app browser blocked direct `/api/` navigation; no authenticated Preview API health or cloud PDF-send result is claimed. No authentication protection was bypassed or weakened. No Preview promotion was performed.
+
+Production read-only checks: `/api/health` returned HTTP 200 with `{"status":"ok"}`; main/origin/main and peeled `v1.0.1` remained `b11b09b`; the original production commit's Vercel check remained successful. No production variable, provider behavior or deployment was changed.
 
 ## Recommendation
 
