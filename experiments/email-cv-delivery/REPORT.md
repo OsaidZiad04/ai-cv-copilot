@@ -67,7 +67,7 @@ Zero LLM calls added. One requested send is one Brevo attempt. No automatic retr
 
 ## New dependencies
 
-One direct application package: `@react-pdf/renderer@4.9.0` (59 installed transitive packages). Four open-source static font assets, license retained. Optional developer PDF QA uses existing Python/Poppler tooling; no paid package, API, storage or service introduced.
+One direct application package: `@react-pdf/renderer@4.9.0` (59 packages added in total, including the renderer and its dependency tree). Four open-source static font assets, license retained. Optional developer PDF QA uses existing Python/Poppler tooling; no paid package, API, storage or service introduced.
 
 ## New risks
 
